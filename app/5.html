@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>无标题文档</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    div {
+        width: 100%;
+        margin: 0 auto;
+        float: left;
+        clear: both;
+    }
+
+    #header {
+        height: 300px;
+        background: green;
+    }
+
+    #box_wrap {
+        height: auto;
+    }
+
+    #box {
+        height: 900px;
+        width: 400px;
+        background: blue;
+        float: none;
+        position: relative;
+        top: -200px;
+    }
+
+    #footer_wrap {
+        position: relative;
+        height: auto;
+    }
+
+    /*提供一个定位点，高度为 0 */
+    #footer {
+        height: 300px;
+        background: yellow;
+        /*position: absolute;*/
+        /*top: -200px;*/
+    }
+
+    /* 需使用绝对定位 */
+</style>
+<body>
+<!-- box 使用相对定位，定位到header层之上。会留出一段空白。目标就是消除该段空白！ -->
+<div id="header"></div>
+
+<div id="box_wrap">    <!-- 用于 box 定位，有了这个，box 用 margin 居中才能生效！ -->
+    <div id="box"></div>
+</div>
+
+<div id="footer_wrap"> <!-- 用于 footer 定位，从而能使 footer 紧接在 box 后面 -->
+    <div id="footer"></div>
+</div>
+<textarea class="text" id="comment" value="22552">3333</textarea>
+</body>
+</html>

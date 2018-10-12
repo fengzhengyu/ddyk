@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type='text' data-id="10" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9]+/,''); if(this.value<1){this.value='';}}).call(this)"  onblur="if(Number(this.value)>Number(this.getAttribute('data-id'))){alert('大于库存！');this.value = this.getAttribute('data-id');return; }"/>
+
+<input type='text'class="input1" onkeyup="">
+<script src="js/jquery.min.js"></script>
+<script >
+
+
+
+
+    $('.input1').keyup(function(){
+
+        $(this).val($(this).val().replace(/[^0-9]+/,''));
+        if( $(this).val()<1){
+            $(this).val('')
+        } if ($(this).val()>= num){
+            alert('超出库存！')
+            return;
+        }
+
+    })
+
+
+</script>
+
+
+
+</body>
+</html>

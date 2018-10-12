@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>注册页</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="shortcut icon" href="images/title_logo.png"/>
+    <script src="js/api.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+</head>
+<body>
+     <div class="r_header">
+         <div class="w1000 margin_auto">
+             <!--顶部logo-->
+             <div class="top">
+               <div class="logo">
+                   <a href="index.html"><img src="images/logo.png" alt=""/></a>
+               </div>
+             </div>
+             <!--主体内容-->
+             <div class="main">
+                 <!--主体左侧内容-->
+                <div class="main_l fl">
+                    <p class="p1">若您有任何疑问请与客服联系</p>
+                    <p class="p2">咨询热线：<span>010-59492293</span></p>
+                    <p class="p3">在线客服：<a target="_blank" class="left_QQ" href="http://wpa.qq.com/msgrd?v=3&uin=2848324377&site=qq&menu=yes">
+                        <img src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a></p>
+                    <p><img src="images/register1.png" alt=""/></p>
+                    <p><img src="images/register2.png" alt=""/></p>
+                    <p class="p6"> <span>已有账号，直接登录！</span><a href="login.html">登 陆</a></p>
+                </div>
+                 <!--主体右侧内容-->
+                 <div class="main_r fl">
+                     <div class="register_div">
+                         <ul class="reg_list">
+                            <li>
+                                <div class="title_div">
+                                    <span>*</span>注册手机号：
+                                </div>
+                                <div class="content_div">
+                                    <input type="text" class="text" id="phone" placeholder="请输入手机号" onfocus="$('#phoneDiv').hide();" onblur="checkPhone();"/>
+                                    <div class="showDiv" id="phoneDiv"><span id="phoneSpan">请输入正确的用户名</span></div>
+                                </div>
+                            </li>
+                             <li>
+                                 <div class="title_div">
+                                     <span>*</span>验证码：
+                                 </div>
+                                 <div class="content_div">
+                                     <input type="text" class="text_code" id="code" placeholder="请输入验证码" onfocus="$('#codeDiv').hide();" onblur="checkCode();" />
+                                     <a href="javascript:;" onclick="return getCode();"><input type="button" value="获取验证码" id="btn_code" class="btn_code"/></a>
+                                     <div class="showDiv" id="codeDiv"><span id="codeSpan">请输入正确验证码</span></div>
+                                 </div>
+                             </li>
+                             <li>
+                                 <div class="title_div">
+                                     <span>*</span>请设置密码：
+                                 </div>
+                                 <div class="content_div">
+                                     <input type="password" class="text" placeholder="请输入密码" id="password" onfocus="$('#passwordDiv').hide();" onblur="getPassword();"/>
+                                     <div class="showDiv" id="passwordDiv"> <span id="passwordSpan">请输入正确密码</span></div>
+                                 </div>
+                             </li>
+                             <li>
+                                 <div class="title_div">
+                                     <span>*</span>请确认密码：
+                                 </div>
+                                 <div class="content_div">
+                                     <input type="password" class="text" placeholder="请再次输入密码" id="password1" onfocus="$('#passwordDiv1').hide();" onblur="getPassword1();"/>
+                                     <div class="showDiv" id="passwordDiv1"> <span id="passwordSpan1">请输入正确密码</span></div>
+                                 </div>
+                             </li>
+                             <li>
+                                 <div class="title_div">
+                                 </div>
+                                 <div class="content_div">
+                                     <input type="checkbox" class="check" checked="checked" id="checkbox1" />我已阅读并同意 <a href="javascript:;" class="blue" onclick="$('.server_agreement').show();">《当代医药市场网服务条款》</a>
+                                     <div class="showDiv" id="server_agreementDiv"> <span id="server_agreementSpan"></span></div>
+                                 </div>
+                             </li>
+                             <li>
+                                 <div class="title_div">
+                                 </div>
+                                 <div class="content_div">
+                                     <input type="button" value="确认注册" class="login_btn " onclick="return save();"/>
+                                     &nbsp;&nbsp;&nbsp;&nbsp;我想起自己的账号了！
+                                     <a href="login.html" class="login-btn" >登 陆</a>
+                                 </div>
+                             </li>
+                         </ul>
+                     </div>
+                 </div>
+                 <div class="clear"></div>
+                 <!--服务协议模块-->
+                 <div class="server_agreement">
+                     <div class="clause_top">
+                         <span>当代医药市场网网服务协议</span>
+                         <span class="clause_close" onclick=" $(this).parent().parent().hide();"></span>
+                     </div>
+                     <div class="clause_content">
+                        <div class="c_c_title">
+                            一、当代医药市场网服务条款的确认和接纳
+                        </div>
+                         <p>当代医药市场网的各项电子服务的所有权和运作权归北京创意行通广告有限公司。当代医药市场网提供的服务将完全按照其发布的章程、服务条款和操作规则严格执行。会员必须完全同意所有服务条款并完成注册程序，才能成为当代医药市场网的正式会员。</p>
+                         <div class="c_c_title">
+                             二、服务简介
+                         </div>
+                         <p>当代医药市场网运用自己的操作系统通过国际互联网络为会员提供网络服务。同时，会员必须：<br>
+                             (1)自行配备上网的所需设备，包括个人电脑、调制解调器或其他必备上网装置。<br>
+                             (2)自行负担个人上网所支付的与此服务有关的电话费用、网络费用。基于当代医药市场网所提供的网络服务的重要性，会员应同意：<br>
+                             (1)提供详尽、准确的个人资料。<br>
+                             (2)不断更新注册资料，符合及时、详尽、准确的要求。<br>
+                             如果会员提供的资料包含有不正确的信息，当代医药市场网保留随时结束会员使用网络服务资格的权利。
+                         </p>
+                         <div class="c_c_title">
+                             三、服务条款的修改和服务修订
+                         </div>
+                         <p>当代医药市场网有权在必要时修改服务条款，当代医药市场网服务条款一旦发生变动，将会在重要页面上提示修改内容。如果不同意所改动的内容，会员可以主动取消获得的网络服务。如果会员继续享用网络服务，则视为接受服务条款的变动。当代医药市场网保留随时修改或中断服务而不需知照会员的权利。当代医药市场网行使修改或中断服务的权利，不需对会员或第三方负责。</p>
+                         <div class="c_c_title">
+                             四、会员隐私制度
+                         </div>
+                         <p>
+                             尊重会员个人隐私是当代医药市场网的一项基本政策。所以，作为对以上第二点会员注册资料分析的补充，当代医药市场网一定不会在未经合法会员授权时公开、编辑或透露其注册资料及保存在当代医药市场网中的非公开内容，除非有法律许可要求或当代医药市场网在诚信的基础上认为透露这些信件在以下四种情况是必要的：<br/>
+                             (1)遵守有关法律规定，遵从当代医药市场网合法服务程序。<br/>
+                             (2)保持维护当代医药市场网的商标所有权。<br/>
+                             (3)在紧急情况下竭力维护会员个人和社会大众的隐私安全。<br/>
+                             (4)符合其他相关的要求。
+                         </p>
+                         <div class="c_c_title">
+                             五、会员的帐号，密码和安全性
+                         </div>
+                         <p>会员一旦注册成功，成为当代医药市场网的合法会员，将得到一个密码和会员名。会员将对会员名和密码安全负全部责任。另外，每个会员都要对以其会员名进行的所有活动和事件负全责。会员若发现任何非法使用会员帐号或存在安全漏洞的情况，请立即当代医药市场网。</p>
+                         <div class="c_c_title">
+                             六、对会员信息的存储和限制
+                         </div>
+                         <p>当代医药市场网不对会员所发布信息的删除或储存失败负责。当代医药市场网有判定会员的行为是否符合当代医药市场网服务条款的要求和精神的保留权利，如果会员违背了服务条款的规定，当代医药市场网有中断对其提供网络服务的权利。</p>
+                         <div class="c_c_title">
+                             七、会员管理
+                         </div>
+                         <p>
+                             在客户成为网站付费会员之前，网站将有权对其发布的信息合法性审核、删除、隐藏等手段，待成为正式会员之后，公布其联系方式。会员单独承担发布内容的责任。会员对服务的使用是根据所有适用于当代医药市场网的国家法律、地方法律和国际法律标准的。会员必须遵循：<br/>
+
+                             (1)从中国境内向外传输技术性资料时必须符合中国有关法规。<br/>
+                             (2)使用网络服务不作非法用途。<br/>
+                             (3)不干扰或混乱网络服务。<br/>
+                             (4)遵守所有使用网络服务的网络协议、规定、程序和惯例。<br/>
+                             会员须承诺不传输任何非法的、骚扰性的、中伤他人的、辱骂性的、恐吓性的、伤害性的、庸俗的，淫秽等信息资料。另外，会员也不能传输任何教唆他人构成犯罪行为的资料；不能传输助长国内不利条件和涉及国家安全的资料；不能传输任何不符合当地法规、国家法律和国际法律的资料。未经许可而非法进入其它电脑系统是禁止的。若会员的行为不符合以上提到的服务条款，当代医药市场网将作出独立判断立即取消会员服务帐号。会员需对自己在网上的行为承担法律责任。会员若在当代医药市场网上散布和传播反动、色情或其他违反国家法律的信息，当代医药市场网的系统记录有可能作为会员违反法律的证据。
+                         </p>
+                         <div class="c_c_title">
+                             八、保障
+                         </div>
+                         <p>会员同意保障和维护当代医药市场网全体成员的利益，负责支付由会员使用超出服务范围引起的律师费用，违反服务条款的损害补偿费用等。</p>
+                         <div class="c_c_title">
+                             九、结束服务
+                         </div>
+                         <p>
+                             会员或当代医药市场网可随时根据实际情况中断一项或多项网络服务。当代医药市场网不需对任何个人或第三方负责而随时中断服务。会员对后来的条款修改有异议，或对当代医药市场网的服务不满，可以行使如下权利：<br/>
+                             (1)停止使用当代医药市场网的网络服务。<br/>
+                             (2)通告当代医药市场网停止对该会员的服务。结束会员服务后，会员使用网络服务的权利马上中止。从那时起，会员没有权利，当代医药市场网也没有义务传送任何未处理的信息或未完成的服务给会员或第三方。
+                         </p>
+                         <div class="c_c_title">
+                             十、通告
+                         </div>
+                         <p>
+                             所有发给会员的通告都可通过重要页面的公告或电子邮件或常规的信件传送。服务条款的修改、服务变更、或其它重要事件的通告都会以此形式进行。
+                         </p>
+                         <div class="c_c_title">
+                             十一、参与广告策划
+                         </div>
+                         <p>会员在他们发表的信息中加入宣传资料或参与广告策划，在当代医药市场网的免费服务上展示他们的产品，任何这类促销方法，包括运输货物、付款、服务、商业条件、担保及与广告有关的描述都只是在相应的会员和广告销售商之间发生。北京创意行通广告有限公司不承担任何责任，当代医药市场网没有义务为这类广告销售负任何一部分的责任。</p>
+                         <div class="c_c_title">
+                             十二、网络服务内容的所有权
+                         </div>
+                         <p>当代医药市场网定义的网络服务内容包括：文字、软件、声音、图片、录象、图表、广告中的全部内容；电子邮件的全部内容；当代医药市场网为会员提供的其他信息。所有这些内容受版权、商标、标签和其它财产所有权法律的保护。所以，会员只能在当代医药市场网和广告商授权下才能使用这些内容，而不能擅自复制、再造这些内容、或创造与内容有关的派生产品。当代医药市场网所有的文章版权归原文作者和当代医药市场网共同所有，任何人需要转载当代医药市场网的文章，必须征得原文作者或当代医药市场网授权。</p>
+                         <div class="c_c_title">
+                             十三、法律
+                         </div>
+                         <p>网络服务条款要与中华人民共和国的法律解释相一致，会员和当代医药市场网一致同意服从高等法院所有管辖。如发生当代医药市场网服务条款与中华人民共和国法律相抵触时，则这些条款将完全按法律规定重新解释，而其它条款则依旧保持对会员产生法律效力和影响。</p>
+                     </div>
+                     <div class="clause_bottom">
+                         <input type="submit" value="同意并继续" class="login_btn" onclick=" $(this).parent().parent().hide();"/>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+</body>
+<script>
+    //验证码计时器
+    var waiteTime=60;
+    function time(o){
+        if(waiteTime == 0){
+            o.removeAttr("disabled");
+            o.val("点击获取验证码");
+            o.css('background','#ff500b');
+            waiteTime = 60;
+        }else{
+            o.attr('disabled','disabled');
+            o.val("重新发送(" + waiteTime + ")");
+            o.css('background','#cccccc');
+            waiteTime--;
+            setTimeout(function(){
+                time(o);
+            },1000)
+        }
+    }
+    //选择手机判断
+    function checkPhone(){
+        var phone = $('#phone').val();
+        if(phone == '' || phone == null){
+            $('#phoneSpan').html("手机号不能为空");
+            $('#phoneDiv').css('display','inline-block');
+            return;
+        }
+        var reg=/^1\d{10}$/;
+        if(!reg.test(phone)){
+            $('#phoneSpan').html("手机号格式不正确");
+            $('#phoneDiv').css('display','inline-block');
+            return;
+        }
+    };
+    //验证码判断
+    function checkCode(){
+        var code =$('#code').val();
+        if(code == '' || code == null){
+            $('#codeSpan').html("验证码不能为空");
+            $('#codeDiv').css('display','inline-block');
+        }
+
+    };
+    //获取验证码
+    function getCode(){
+        var phone = $('#phone').val();
+        if(phone == '' || phone == null){
+            $('#phoneSpan').html("手机号不能为空");
+            $('#phoneDiv').css('display','inline-block');
+            return;
+        }
+        var reg=/^1\d{10}$/;
+        if(!reg.test(phone)){
+            $('#phoneSpan').html("手机号格式不正确");
+            $('#phoneDiv').css('display','inline-block');
+            return;
+        }
+        if(phone != '' || phone != null){
+            $.ajax({
+                type:'post',
+                url: DD_api.sendMessage,
+                data:{phone:phone},
+                async:false,
+                dataType:"json",
+                //cache: false,
+                crossDomain: true == !(document.all),
+                success:function(res){
+                    console.log(1);
+                console.log(res);
+                    if(res.flag == "success"){
+                        time($('#btn_code'));
+
+                    }else{
+                        $('#phoneSpan').html(res.info);
+                        $('#phoneDiv').css('display','inline-block');
+                       setTimeout(function(){
+                           window.location = "login.html";
+                       },3000)
+
+                    }
+                },
+                error:function(){
+                    alert(2)
+                }
+            })
+        }
+    }
+    //密码一判断
+    function getPassword(){
+        var pass= $('#password').val();
+        if(pass == '' || pass == null){
+            $('#passwordSpan').html("密码不能为空，请正确输入");
+            $('#passwordDiv').css('display','inline-block');
+            return;
+        }
+        if(pass.length>20||pass.length<6){
+            $('#passwordSpan').html("密码6-12位,请正确输入");
+            $('#passwordDiv').css('display','inline-block');
+            return;
+        }
+    }
+    //重复密码判断
+    function getPassword1(){
+        var pass1= $('#password1').val();
+        if(pass1 == '' || pass1 == null){
+            $('#passwordSpan1').html("密码不能为空，请正确输入");
+            $('#passwordDiv1').css('display','inline-block');
+            return;
+        }
+        var pass= $('#password').val();
+        if(pass == '' || pass == null){
+            $('#passwordSpan').html("密码不能为空，请正确输入");
+            $('#passwordDiv').css('display','inline-block');
+            return;
+        }
+        if(pass.length>20||pass.length<6){
+            $('#passwordSpan').html("密码6-12位,请正确输入");
+            $('#passwordDiv').css('display','inline-block');
+            return;
+        }
+        if(pass1!=pass){
+            $('#passwordSpan1').html("密码不一致");
+            $('#passwordDiv1').css('display','inline-block');
+        }
+
+    }
+    //提交
+    function save(){
+        //协议勾选状态
+        if($('#checkbox1').prop('checked')==false){
+            $('#server_agreementSpan').html("请确定使用协议");
+            $('#server_agreementDiv').css('display','inline-block');
+            return;
+        }else{
+            $('#server_agreementDiv').hide();
+        }
+        checkPhone();
+        checkCode();
+        getPassword();
+        getPassword1();
+        var phone = $('#phone').val();
+        var pass= $('#password').val();
+        var authCode = $('#code').val();
+        $.ajax({
+            url: DD_api.sendSign,
+            type:'post',
+            data:{phone:phone,password:pass,authCode:authCode},
+            async:false,
+            dataType:"json",
+            //cache: false,
+            crossDomain: true == !(document.all),
+            success:function(res){
+               if(res.code == 1){
+                   var name = res.data.memberName;
+                   var phone = res.data.phone;
+                   var token = res.data.userToken;
+                   var time = res.data.addTime;
+                   var photo = res.data.headPhoto;
+                   var email = res.data.email;
+                   var goldTotal = res.data.goldTotal;
+                   $.cookie('userName',name,{expires:1,path:'/'});
+                   $.cookie('userPhone',phone,{expires:1,path:'/'});
+                   $.cookie('userToken',token,{expires:1,path:'/'});
+                   $.cookie('userPhoto',photo,{expires:1,path:'/'});
+                   $.cookie('userTime',time,{expires:1,path:'/'});
+                   $.cookie('userEmail',email,{expires:1,path:'/'});
+                   $.cookie('goldTotal',goldTotal,{expires:1,path:'/'});
+                   window.location.href="registerS.html";
+                   return false;
+
+               }else{
+                   $('#codeSpan').html("验证码不对，注册失败!");
+                   $('#codeDiv').css('display','inline-block');
+               }
+            }
+        })
+    }
+</script>
+
+</html>

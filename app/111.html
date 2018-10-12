@@ -1,0 +1,76 @@
+<BODY style="background: black">
+  <SCRIPT LANGUAGE="JavaScript">
+    //ͼƬ�Ĺ����У�������Ĺ켣����һ��Ϊ���ĵ���������
+    //������setTimeout��������˶����Ĺ���
+    //ͼƬ
+   // var snowsrc="snow_f.png"
+    //ѩ������
+    var no = 30;
+    //����������xp��ʾ�����꣬yp��ʾ������>
+    var dx, xp, yp;
+    //����������am��ʾ���Ұڶ��ķ��ȣ�stx��ʾ�������ƫ�Ʋ�����sty��ʾ������Ĳ���>
+    var am, stx, sty;
+    {
+      //��ȡ��ǰ���ڵĿ��
+      clientWidth = document.body.clientWidth;
+      //��ȡ��ǰ���ڵĸ߶�
+      clientHeight = document.body.clientHeight;
+    }
+    var dx = new Array();
+    var xp = new Array();
+    var yp = new Array();
+    var am = new Array();
+    var stx = new Array();
+    var sty = new Array();
+    var snowFlakes = new Array();
+    for (i = 0; i < no; ++ i) {
+      dx[i] = 0;
+      //��i��ͼƬ�ĺ������ʼֵ
+      xp[i] = Math.random()*(clientWidth-50);
+      yp[i] = Math.random()*clientHeight;//��i��ͼƬ���������ʼֵ
+      am[i] = Math.random()*20;         //��i��ͼƬ�����Ұڶ��ķ���
+      stx[i] = 0.02 + Math.random()/10; //��i��ͼƬx����Ĳ���
+      sty[i] = 0.7 + Math.random();     //��i��ͼƬy����Ĳ���
+      //����һ������ѩ��ͼƬ��div�����������������
+      var snowFlakeDiv = document.createElement('div');
+      snowFlakeDiv.setAttribute('id', 'dot'+ i);
+      snowFlakeDiv.style.position = 'absolute';
+      snowFlakeDiv.style.top = 15;
+      snowFlakeDiv.style.left = 15;
+
+      //����һ��ѩ��ͼƬ�������ÿ�ߣ�������div
+      var snowFlakeImg = document.createElement('span');
+      snowFlakeImg.setAttribute('src', snowsrc);
+      snowFlakeImg.style.width = 30;
+      snowFlakeImg.style.height = 30;
+      //��ѩ��div���뵽document�У���ͨ�����鱣��
+      snowFlakeDiv.appendChild(snowFlakeImg);
+      document.body.appendChild(snowFlakeDiv);
+      snowFlakes[i] = snowFlakeDiv;
+    }
+    function snow() {
+      for (i = 0; i < no; ++ i) {
+        //��i��ͼƬ����������ϲ���
+        yp[i] += sty[i];
+        //��������곬������Ļ���أ����ø�ͼƬ����Ϣ�����������ꡢ�������Լ�x����Ĳ�����y����Ĳ���
+        if (yp[i] > clientHeight-50) {
+          //���¸�ֵͼƬ�ĺ�����
+          xp[i] = Math.random()*(clientWidth-am[i]-30);
+          //���¸�ֵͼƬ��������
+          yp[i] = 0;
+        }
+        dx[i] += stx[i];//dx��������һ������
+        //ֱ�Ӳ��������ж�Ӧ��ѩ��div
+        var snowFlakeDiv = snowFlakes[i];
+        //����ͼƬ��������
+        snowFlakeDiv.style.top = yp[i];
+        //����ͼƬ�ĺ�����
+        snowFlakeDiv.style.left = xp[i] + am[i]*Math.sin(dx[i]);
+      }
+      //�趨����ˢ�µ�ʱ������
+      setTimeout("snow()", 10);
+    }
+    //����snowIE()����
+    snow();
+  </script>
+</BODY>

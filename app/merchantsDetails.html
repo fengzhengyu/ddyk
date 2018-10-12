@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/iconfont.css"/>
+    <link rel="shortcut icon" href="images/title_logo.png"/>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>  
+    <script src="js/api.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/sha1.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/merchantsDetails.js"></script>
+</head>
+<body>
+<!-- 头部内容-->
+<div class="son_header">
+    <!--顶部导航-->
+    <div class="son_top">
+        <div class="w1200 margin_auto">
+            <div class="top_message  fl">
+                <p class="">你好，欢迎来到当代医药市场网！ 咨询热线：010-59492288</p>
+            </div>
+            <div class="top_state fl">
+                <span class="fl">ddyy123</span>
+                <span  class="fl" id="close_login">退出</span>
+            </div>
+            <div id="login_register" class="fl">
+                <a href="login.html" id="login">请登陆</a>
+                <a href="register.html" id="register">免费注册</a>
+            </div>
+            <div class="top_nav fr">
+                <ul id="son_top_nav">
+                    <li class="iphone">
+                        <div class="dt3">
+                            <span class="ios">IOS</span><i class="iconfont icon-iconfontapple"></i>
+                        </div>
+                        <div class="dd3">
+                            <img src="images/iosrwm.png" alt="苹果二维码"/>
+                        </div>
+                        <div  class="below"></div>
+                    </li>
+                    <li class="and">
+                        <div class="dt4">
+                            <span class="and">Android</span><i class="iconfont icon-20150720090316000"></i>
+                        </div>
+                        <!--<div class="dd4">-->
+                            <!-- -->
+                        <!--</div>-->
+                        <div  class="below"></div>
+                    </li>
+                    <li class="wachat">
+                        <div class="dt1">
+                            <span>官方微信</span><i></i>
+                        </div>
+                        <div class="dd1">
+                            <div style="width: 112px;height: 1px;background: #dedede;position: relative;"></div>
+                            <div class="weixin">
+                                <img src="images/weixin.png" alt="微信二维码"/>
+                            </div>
+                            <div class="x_text">
+                                <p>关注官方微信</p>
+                                <p class="p2">聚焦行业动态</p>
+                            </div>
+                        </div>
+                        <div  class="below"></div>
+                    </li>
+                    <li class="customer">
+                        <div class="dt2"><span>客户服务</span><i></i></div>
+                        <div class="dd2">
+                            <a target="_blank" class="left_QQ" href="http://wpa.qq.com/msgrd?v=3&uin=3153671752&site=qq&menu=yes"><img src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
+                            <a target="_blank" class="left_QQ" href="http://wpa.qq.com/msgrd?v=3&uin=2928446968&site=qq&menu=yes"><img src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
+                            <a target="_blank" class="left_QQ" href="http://wpa.qq.com/msgrd?v=3&uin=3278342383&site=qq&menu=yes"><img src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
+                            <a target="_blank" class="left_QQ" href="http://wpa.qq.com/msgrd?v=3&uin=3153671752&site=qq&menu=yes"><img src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
+                        </div>
+                        <div  class="below"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--二级菜单导航-->
+    <div class="son_nav">
+        <div class="w1200 margin_auto ovhidden">
+            <ul>
+                <li><a href="/exhibition/" target="_blank" style="color:#fcff00;"><span>药博会</span></a></li>
+                <li><a href="merchants.html"><span>招商</span></a></li>
+                <li><a href="agentDataBase.html"><span>代理</span></a></li>
+                <li><a href="marketing.html"><span>营销</span></a></li>
+                <li><a href="purchase.html"><span>采购</span></a></li>
+                <li><a href="information.html"><span>资讯</span></a></li>
+                <!--<li><a href="javascript:;"><span>网刊</span></a></li>-->
+                <li><a href="healthy.html"><span>健康</span></a></li>
+                <li><a href="special.html"><span>专题</span></a></li>
+                <li><a href="videoIndex.html"><span>视频</span></a></li>
+
+            </ul>
+        </div>
+    </div>
+    <!--logo及搜索-->
+    <div class="son_top2">
+        <div class="w1200 margin_auto">
+            <a href="index.html"  title="返回首页"><div class="logo fl"></div></a>
+            <div class="channel_bg fl"><a href="merchants.html"> 招商频道</a></div>
+            <div class="search mLeft fl">
+                <input type="text"  value="搜索商品" id="searchText"/>
+                <span class="go" id="searchGo"></span>
+            </div>
+            <div class="telephone fr">
+                <p>010-59492288</p>
+                <p>010-59490089</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 主题内容-->
+<div class="zs_main">
+    <div class="floor_tab">
+        <div class="w1200 margin_auto ovhidden">
+            <!--十大药品分类-->
+            <ul class="merchans_tab">
+                <li><a href="merchants.html?id=1&sunId=&sunName=&page=1">中西药品<span></span></a></li>
+                <li><a href="merchants.html?id=2&sunId=&sunName=&page=1">中药材<span></span></a></li>
+                <li><a href="merchants.html?id=3&sunId=&sunName=&page=1">中药饮片<span></span></a></li>
+                <li><a href="merchants.html?id=4&sunId=&sunName=&page=1">滋补保健<span></span></a></li>
+                <li><a href="merchants.html?id=5&sunId=&sunName=&page=1">医疗器械<span></span></a></li>
+                <li><a href="merchants.html?id=6&sunId=&sunName=&page=1">中药加工设备<span></span></a></li>
+                <li><a href="merchants.html?id=7&sunId=&sunName=&page=1">制药包装<span></span></a></li>
+                <li><a href="merchants.html?id=8&sunId=&sunName=&page=1">医美药妆<span></span></a></li>
+                <li><a href="merchants.html?id=9&sunId=&sunName=&page=1">母婴用品<span></span></a></li>
+                <li><a href="merchants.html?id=10&sunId=&sunName=&page=1">成人用品<span></span></a></li>
+            </ul>
+        </div>
+    </div>
+    <!--招商药品详情信息-->
+    <div class="floor_container">
+        <div class="w1200 margin_auto ovhidden">
+            <div class="offspring">
+                <p><a href="index.html">当代医药市场</a>  &gt  <a href="merchants.html?id=1&sunId=&sunName=&page=1">招商</a>  &gt  <span id="parentName"></span>  &gt  <span id="sunName"></span></p>
+            </div>
+            <div class="Details">
+                <div class="Details_log fl">
+                    <img src="" alt="药品图片" id="shareImg"/>
+                </div>
+                <div class="Details_explain fl">
+                    <div class="text1" id="shareTitle"></div>
+                    <div class="text2">招商热线：</div>
+                    <div class="text3"></div>
+                    <div class="text4">
+                        <ul>
+                        </ul>
+                    </div>
+                    <div class="text5" style="position: relative">
+                        <a href="javascript:;" class="aa a1" target="_blank" id="visitShop">访问商品商铺</a>
+                        <a href="#agent1" class="aa a2">洽谈留言</a>
+                        <span class="sp sp1" id="collection"><i class="iconfont icon-shoucang"></i>收藏</span>
+                        <span class="sp sp2 share"><i class="iconfont icon-fenxiang"></i>分享
+                            <div class="shareBox" style="width: 120px;padding-left: 8px;">
+                                <div class="bdsharebuttonbox">
+                                    
+                                    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                                    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+                                    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                                    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                                    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                                    <!-- <a href="#" class="bds_more" data-cmd="more"></a> -->
+                                </div>
+                                <script>
+                                    setTimeout(function() {
+                                            //console.log(window.location.href)
+                                        window._bd_share_config={
+                                            "common":{
+                                                "bdSnsKey":{},
+                                                "bdText": document.getElementById('shareTitle').innerText,
+                                                // "bdDesc":"111",
+                                                "bdUrl": window.location.href,
+                                                "bdPic": document.getElementById('shareImg').getAttribute('src'),
+                                                "bdMini":"2",
+                                                "bdMiniList":false,
+                                            
+                                                "bdStyle":"0",
+                                                "bdSize":"16"},
+                                            
+                                                "share":{
+
+                                                }
+                                            };
+                                        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                                            
+                                    }, 20);
+                                 </script>  
+                            </div>
+                        </span>
+
+                    </div>
+                </div>
+                <div class="Details_prompt fl">
+                    <div class="img"><img src="images/surprised.png" alt="当代"/></div>
+                    <div class="message">
+                        <p class="p1"><i>!</i><span>温馨提示</span></p>
+                        <p class="p2">
+                            <span class="tx1">本网不提供各类产品的在线交易和产品咨询服务，个人购买者请到医院或药店购买或咨询。</span>
+                            <span class="tx2">本网只起招商代理信息展示平台作用，不为交易经过负任何责任，请双方互相交换对方经营资质，谨慎交易，以确保您的权益。</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="Details_content">
+                <!--左侧推荐列表-->
+                <div class="Details_content_l fl">
+                    <div class="column">
+                        <h2>同类产品推荐</h2>
+                        <ul class="recommend">
+                            <!--<li><a href="javascript:;">厂家直销祛痛贴大黑膏</a></li>-->
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h2>长期招商产品</h2>
+                        <ul class="recommend">
+                        </ul>
+                    </div>
+                </div>
+                <!--右侧产品详情-->
+                <div class="Details_content_r fl">
+                    <div class="Details_title">产品详情</div>
+                    <div>
+                        <div class="Details_talk">
+                        </div>
+                    </div>
+                    <!--意向留言-->
+                    <div class="Details_speak" >
+                        <a name="agent1"></a>
+                        <div  class="Details_speak_l fl">
+                            <form>
+                                <ul>
+                                    <li class="l1">| 洽谈留言：</li>
+                                    <li  class="l2"><span>*</span>联系人<input type="text" class="text1" id="person"><span>*</span >手机<input type="text"  class="text1" id="phone"><span></span>电话<input type="text"  class="text1" id="mobile"></li>
+                                    <li class="l3">
+                                        <span>*</span>意向区域
+                                        <select class="sel" id="select">
+                                            <option value="0">全国</option>
+                                         </select>
+                                        <div class="selectContent"></div>
+                                    </li>
+                                    <li class="l4 ovhidden" >
+                                        <span>*</span>代理渠道
+                                        <div class="sale" id="channel">
+                                        </div>
+                                    </li>
+                                    <li class="l5 ovhidden">
+                                        <span>*</span>代理性质
+                                        <div class="agent" id="agent">
+                                        </div>
+                                    </li>
+                                    <li class="l6 ovhidden"><span>*</span>留言内容
+                                        <div  class="board">
+                                            <textarea style="width: 580px;height: 68px;resize: none;outline: none;" id="content"></textarea>
+                                        </div>
+                                    </li>
+                                    <li class="l7 ovhidden"><span>*</span>验证码
+                                        <div class="verification">
+                                            <input type="text" class="v_text" id="code"/>
+                                            <span class="update">获取验证码</span>
+                                            <input type="reset" class="v_reset" value="重置"/>
+                                            <input type="button"  class="v_submit" value="提交"/>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div class="Details_speak_r fr">
+                            <p>当前留言产品为</p>
+                            <div class="Details_log2"><img src="" alt="图片"/></div>
+                        </div>
+                    </div>
+                    <!--智能推荐-->
+                    <!--<div class="Details_like">-->
+                        <!--<div class="title">猜你喜欢</div>-->
+                        <!--<ul>-->
+                            <!--<li style="margin-left: 2px;">-->
+                                <!--<a href="javascript:;">-->
+                                    <!--<div class="img"><img src="images/son_commodity1.png" alt=""/></div>-->
+                                    <!--<dl>-->
+                                        <!--<dt>复方氨维片</dt>-->
+                                        <!--<dd>补充氨基酸、维生素，有效促进细胞提高血浆蛋白水平，改善组织细胞代</dd>-->
+                                    <!--</dl>-->
+                                <!--</a>-->
+                                <!--<a  href="javascript:;" class="like_btn">-->
+                                    <!--<span class="sp1">查看详情</span>-->
+                                    <!--<i></i>-->
+                                    <!--<span class="sp2">访问数：000000</span>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="javascript:;">-->
+                                    <!--<div class="img"><img src="images/son_commodity2.png" alt=""/></div>-->
+                                    <!--<dl>-->
+                                        <!--<dt>复方氨维片</dt>-->
+                                        <!--<dd>补充氨基酸、维生素，有效促进细胞提高血浆蛋白水平，改善组织细胞代</dd>-->
+                                    <!--</dl>-->
+                                <!--</a>-->
+                                <!--<a  href="javascript:;" class="like_btn">-->
+                                    <!--<span class="sp1">查看详情</span>-->
+                                    <!--<i></i>-->
+                                    <!--<span class="sp2">访问数：000000</span>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="javascript:;">-->
+                                    <!--<div class="img"><img src="images/son_commodity3.png" alt=""/></div>-->
+                                    <!--<dl>-->
+                                        <!--<dt>复方氨维片</dt>-->
+                                        <!--<dd>补充氨基酸、维生素，有效促进细胞提高血浆蛋白水平，改善组织细胞代</dd>-->
+                                    <!--</dl>-->
+                                <!--</a>-->
+                                <!--<a  href="javascript:;" class="like_btn">-->
+                                    <!--<span class="sp1">查看详情</span>-->
+                                    <!--<i></i>-->
+                                    <!--<span class="sp2">访问数：000000</span>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="javascript:;">-->
+                                    <!--<div class="img"><img src="images/son_commodity4.png" alt=""/></div>-->
+                                    <!--<dl>-->
+                                        <!--<dt>复方氨维片</dt>-->
+                                        <!--<dd>补充氨基酸、维生素，有效促进细胞提高血浆蛋白水平，改善组织细胞代</dd>-->
+                                    <!--</dl>-->
+                                <!--</a>-->
+                                <!--<a  href="javascript:;" class="like_btn">-->
+                                    <!--<span class="sp1">查看详情</span>-->
+                                    <!--<i></i>-->
+                                    <!--<span class="sp2">访问数：000000</span>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                        <!--<div class=""></div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部部分-->
+<div id="footer"></div>
+</body>
+<script>
+    $(function(){
+       
+        //分享触发
+        $('.share').hover(function(){
+            $('.shareBox').show();
+
+        },function(){
+            $('.shareBox').hide();
+        });
+        //会员公共效果
+        indexTop();
+
+        //加载底部内容
+        $('#footer').load('common/page_footer.html');
+
+        var sharetoken = $.cookie('userToken') || '';
+         //自定义字符串
+      var nonceStr = ''
+      var str= "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      for(let i=0;i<16;i++){
+       nonceStr += str.substr(Math.round((Math.random() * 10)), 1);  
+      }
+        var shareList = {userToken: sharetoken};
+        var shareUrl = 'http://www.ey99.com/ddyk/Api/Weixinpay/getWeChatShare'
+        var shareData = getAjax(shareUrl,shareList);
+        if(shareData.flag == 'success'){
+            var access_token = shareData.data.access_token;
+            var ticket = shareData.data.ticket;
+            var timesTamp = shareData.data.time;
+            var shareUrl1 = location.href.split('#')[0];
+            var  s = '';
+            s = "jsapi_ticket=" +ticket + "&noncestr=" + nonceStr + "&timestamp=" +timesTamp + "&url="+shareUrl1;  
+        
+            var signature =  hex_sha1(s);//对所有待签名参数按照字段名的ASCII 码从小到大排序（字典序）
+
+            wx.config ({  
+                debug : false,    // true:调试时候弹窗  
+                appId :  'wxba75f160615a7660',  // 微信appid  
+                timestamp :timesTamp, // 时间戳  
+                nonceStr : nonceStr,  // 随机字符串  
+                signature :signature, // 签名  
+                jsApiList : [  
+                    // 所有要调用的 API 都要加到这个列表中  
+                    'onMenuShareAppMessage',  //  分享到朋友接口  
+                    'onMenuShareTimeline',       // 分享到朋友圈接口  
+                    'onMenuShareQQ',         // 分享到QQ接口  
+                ]  
+            });  
+
+
+            wx.ready(function()  {
+        
+            setTimeout(function(){
+                //分享给朋友
+                // console.log(this.link)
+                wx.onMenuShareAppMessage({
+                    title: document.getElementById("shareTitle").innerText, // 分享标题
+                    desc: '详见说明', // 分享描述
+                    link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    imgUrl:  document.getElementById("shareImg").getAttribute('src'), // 分享图标
+                    //type: '', // 分享类型,music、video或link，不填默认为link
+                    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                    
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                    }
+                })
+                //分享到朋友圈
+                wx.onMenuShareTimeline({
+                    title: document.getElementById("shareTitle").innerText, // 分享标题
+                    link:  window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    imgUrl: document.getElementById("shareImg").getAttribute('src'), // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                    }
+                })
+                //分享到QQ
+                wx.onMenuShareQQ({
+                    title: document.getElementById("shareTitle").innerText, // 分享标题
+                    desc: '详见说明', // 分享描述
+                    link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    imgUrl: document.getElementById("shareImg").getAttribute('src'), // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                    }
+                })
+
+            },300)
+            
+
+            })
+            wx.error(function(res){    
+            // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。    
+
+                console.log(res)
+            });   
+        
+        }else{
+            console.log('接口错误')
+        }
+
+
+       
+        
+       
+    })
+ 
+</script>
+</html>

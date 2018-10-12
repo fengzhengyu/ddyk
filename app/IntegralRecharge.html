@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>积分充值</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script src="js/api.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/IntegralRecharge.js"></script>
+</head>
+<body>
+    <!--头部内容-->
+    <div class="h_header">
+        <div class="w1200 margin_auto">
+            <a href="index.html" class="top_tit fl">当代医药市场网</a>
+            <a href="MemberIndex.html" class="top_logo fl">
+                <div  class="logo fl"><img src="images/top_user.png" alt=""/></div>
+                <div class="top_tit2 fl">
+                    <p>会员中心</p>
+                </div>
+            </a>
+            <!--顶部右边内容-->
+            <div class="top_right fr">
+                <div class="user_logo"><img src="images/zzc.png" alt=""/></div>
+                <div class="account"></div>
+                <!--<div class="news"><span>0</span></div>-->
+                <div class="top_close"></div>
+            </div>
+        </div>
+    </div>
+    <!--主体内容-->
+    <div class="h_main">
+        <div class="w1200 margin_auto ovhidden">
+            <!--左侧内容-->
+            <div class="main_left fl">
+                <div class="tell">
+                    <span><img src="images/top_tell.png" alt=""/></span>客服电话：010-59492293
+                </div>
+                <div class="fold_menu">
+                    <dl class="menu_list">
+                        <dt><span class="sp1"></span>会员设置<i></i></dt>
+                        <dd>
+                            <ul>
+                                <li><a href="MemberBasic.html"><span></span>基本信息设置</a></li>
+                                <li><a href="MemberSecurity.html"><span></span>账号安全设置</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="menu_list">
+                        <dt class=""><span class="sp2"></span>招商管理<i></i></dt>
+                        <dd class="">
+                            <ul>
+                                <li><a href="PublishingInvestment.html"><span></span>发布招商信息</a></li>
+                                <li><a href="ManagementInvestment.html"><span></span>管理招商信息</a></li>
+                                <li><a href="CollectInvestment.html"><span></span>收藏招商信息</a></li>
+                                <li><a href="receiveMessage.html"><span></span>收到代理信息</a></li>
+                                <li><a href="MyMessage.html"><span></span>我的留言信息</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="menu_list">
+                        <dt class=""><span class="sp3"></span>求购管理<i></i></dt>
+                        <dd class="">
+                            <ul>
+                                <li><a href="PublishBuy.html"><span></span>发布求购信息</a></li>
+                                <li><a href="ManagementBuy.html"><span></span>管理求购信息</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="menu_list">
+                        <dt><span class="sp6"></span>商铺管理<i></i></dt>
+                        <dd>
+                            <ul>
+                                <li><a href="ViewShops.html"><span></span>查看我的商铺</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="menu_list">
+                        <dt class="on"><span class="sp7"></span>积分管理<i></i></dt>
+                        <dd class="on">
+                            <ul>
+                                <li><a href="IntegralManagement.html"><span></span>积分管理信息</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <!--右侧内容-->
+            <div class="main_right fr">
+                <!--后代标题-->
+                <div class="offspring_tit">
+                    <p><a href="MemberIndex.html"><i class="home"></i><span>会员中心</span></a>&gt<span>积分管理</span>&gt<span>积分充值</span></p>
+                </div>
+                <!--积分管理信息详情-->
+                <div class="jf_container">
+                    <div class="integral_wrap">
+                        <div class="top">
+                            <p class="p1">当前的积分 <span  id="integralNum"></span></p>
+                        </div>
+                        <div class="recharge">
+                            <ul class="type" id="pay_type">
+                                <!--<li>支付宝 <i></i> </li>-->
+                                <li class="on">微信 <i></i></li>
+                            </ul>
+                            <div class="clear"></div>
+                            <div class="content" id="pay_content">
+                                <!--<div class="weChat">-->
+                                    <!--&lt;!&ndash;<p style="padding: 50px 0 0 50px;"><img src="images/alipay.jpg" alt="支付宝"/></p>&ndash;&gt;-->
+                                    <!--<p class="p1">充值金额：-->
+                                        <!--<label for="a_money1" class="money on"><input type="radio" name="a_money" id="a_money1" value="100" checked>100元</label>-->
+                                        <!--<label for="a_money2" class="money"><input type="radio" name="a_money" id="a_money2" value="200">200元</label>-->
+                                        <!--<label for="a_money3" class="money"><input type="radio" name="a_money" id="a_money3" value="500">500元</label>-->
+                                        <!--<label for="a_money4" class="money"><input type="radio" name="a_money" id="a_money4" value="1000">1000元</label>-->
+                                        <!--<label for="a_money5" class="money"><input type="radio" name="a_money" id="a_money5" value="3000">3000元</label>-->
+                                        <!--<label for="a_money6" class="money"><input type="radio" name="a_money" id="a_money6" value="5000">5000元</label>-->
+                                    <!--</p>-->
+                                    <!--<p class="payIcon"><img src="images/pay1.png" alt="alLogo"/></p>-->
+                                    <!--<p class="p3"><input type="checkbox" class="check" checked/>我已了解积分的使用用途，及获取方式。勾选此项代表我是谨慎选择后同意使用此形式增加积分！</p>-->
+                                    <!--<p class="p8">-->
+                                        <!--<a href="javascript:;" class="recharge_w_btn ok">确定</a>-->
+                                        <!--<a href="javascript:;" class="recharge_w_btn">取消</a>-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                                <div class="weChat on">
+                                    <!--<p style="padding: 50px 0 0 50px;"><img src="images/pay_wechat.jpg" alt="微信"/></p>-->
+                                    <p class="p1">充值金额：
+                                        <label for="w_money1" class="money on"><input type="radio" name="w_money" id="w_money1" value="100" checked>100元</label>
+                                        <label for="w_money2" class="money"><input type="radio" name="w_money" id="w_money2" value="200">200元</label>
+                                        <label for="w_money3" class="money"><input type="radio" name="w_money" id="w_money3" value="500">500元</label>
+                                        <label for="w_money4" class="money"><input type="radio" name="w_money" id="w_money4" value="1000">1000元</label>
+                                        <label for="w_money5" class="money"><input type="radio" name="w_money" id="w_money5" value="3000">3000元</label>
+                                        <label for="w_money6" class="money"><input type="radio" name="w_money" id="w_money6" value="5000">5000元</label>
+                                    </p>
+
+                                    <p class="payIcon"><img src="images/pay2.png" alt="weLogo"/></p>
+                                    <p class="p3"><input type="checkbox" class="check" checked/>我已了解积分的使用用途，及获取方式。勾选此项代表我是谨慎选择后同意使用此形式增加积分！</p>
+                                    <p id="codeDiv" class="p4"><span class="sp4"><img src="" alt="" id="QR_code"/></span></p>
+                                    <p class="p5">注：充值成功后，刷新页面方可看到积分变化！</p>
+                                    <!--<p class="p8">-->
+                                        <!--<a href="javascript:;" class="recharge_w_btn ok" id="weChatBtn">确定</a>-->
+                                        <!--<a href="javascript:;" class="recharge_w_btn">取消</a>-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recharge_end">
+                        <div class="top">
+                            充值 <a href="javadcript:;" class="recharge_close fr"><img src="images/popupx.png" alt="关闭按钮"/></a>
+                        </div>
+                        <div class="middle">
+                            <div class="img fl">
+                                <img src="images/!.png" alt="图标"/>
+                            </div>
+                            <div class="txt fl">
+                                <h3>请您在新打开的页面上完成充值。</h3>
+                                <p>充值完成后，根据您的情况点击下面按钮。</p>
+                            </div>
+
+                        </div>
+                        <div class="bottom">
+
+                            <a href="javadcript:;" class="btn2">充值失败</a>
+                            <a href="javascript:;" class="btn1">充值成功</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    memberTop();
+
+</script>
+
+</html>

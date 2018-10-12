@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test数据</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/common.js"></script>
+
+</head>
+<body>
+      
+     <dl id="data-list">
+         <dt></dt>
+         <dd></dd>
+     </dl>
+</body>
+<script>
+    var date = new Date()
+    var year = date.getFullYear();
+    var month = date.getMonth()+1;
+    var day  = date.getDate();
+    var hour = date.getHours();
+    var minute = date.getMinutes();
+    var second = date.getSeconds();
+
+   // alert(year+'-'+month+'-'+day+'-'+hour+':'+minute+':'+second)
+    url = 'js/data.json';
+    res = getAjax(url);
+    var goods = res.goods,
+            ratings = res.ratings,
+            seller = res.seller,
+            dataList = $('#data-list'),
+            html = '';
+    if(!goods){
+        dataList.html('暂无数据')
+    }else{
+        for(var i=0;i<goods.length;i++){
+            html += '<dt>'+goods[i].name+'</dt><dd>'+goods[i].foods[0].name+'</dd><dd>'+goods[i].foods[0].description+'</dd><dd>'+goods[i].foods[0].sellCount+'</dd>'
+        }
+        dataList.html(html)
+    }
+
+</script>
+</html>

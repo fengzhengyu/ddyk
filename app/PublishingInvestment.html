@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>发布招商信息</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script src="js/api.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body  style="background: #f1f5f8;">
+    <!--头部内容-->
+    <div class="h_header">
+        <div class="w1200 margin_auto">
+            <a href="index.html" class="top_tit fl">当代医药市场网</a>
+            <a href="MemberIndex.html" class="top_logo fl">
+                <div  class="logo fl"><img src="images/top_user.png" alt="图片"/></div>
+                <div class="top_tit2 fl">
+                    <p>会员中心</p>
+                </div>
+            </a>
+            <!--顶部右边内容-->
+            <div class="top_right fr">
+                <div class="user_logo"><img src="images/zzc.png" alt="图片"/></div>
+                <div class="account"></div>
+                <!--<div class="news"><span>0</span></div>-->
+                <div class="top_close"></div>
+            </div>
+        </div>
+    </div>
+    <!--主体内容-->
+    <div class="h_main">
+        <div class="w1200 margin_auto ovhidden">
+            <!--左侧内容-->
+            <div class="main_left fl">
+                <div class="tell">
+                    <span><img src="images/top_tell.png" alt=""/></span>客服电话：010-59492293
+                </div>
+                <div class="fold_menu">
+                    <dl class="menu_list">
+                        <dt class=""><span class="sp1"></span>会员设置<i></i></dt>
+                        <dd class="">
+                            <ul>
+                                <li><a href="MemberBasic.html"><span></span>基本信息设置</a></li>
+                                <li><a href="MemberSecurity.html"><span></span>账号安全设置</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="menu_list">
+                        <dt class="on"><span class="sp2"></span>招商管理<i></i></dt>
+                        <dd class="on">
+                            <ul>
+                                <li><a href="PublishingInvestment.html"><span></span>发布招商信息</a></li>
+                                <li><a href="ManagementInvestment.html"><span></span>管理招商信息</a></li>
+                                <li><a href="CollectInvestment.html"><span></span>收藏招商信息</a></li>
+                                <li><a href="receiveMessage.html"><span></span>收到代理信息</a></li>
+                                <li><a href="MyMessage.html"><span></span>我的留言信息</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="menu_list">
+                        <dt class=""><span class="sp3"></span>求购管理<i></i></dt>
+                        <dd class="">
+                            <ul>
+                                <li><a href="PublishBuy.html"><span></span>发布求购信息</a></li>
+                                <li><a href="ManagementBuy.html"><span></span>管理求购信息</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="menu_list">
+                        <dt><span class="sp6"></span>商铺管理<i></i></dt>
+                        <dd>
+                            <ul>
+                                <li><a href="ViewShops.html"><span></span>查看我的商铺</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="menu_list">
+                        <dt><span class="sp7"></span>积分管理<i></i></dt>
+                        <dd>
+                            <ul>
+                                <li><a href="IntegralManagement.html"><span></span>积分管理信息</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <!--右侧内容-->
+            <div class="main_right fr">
+                <!--后代标题-->
+                <div class="offspring_tit">
+                    <p><a href="MemberIndex.html"><i class="home"></i><span>会员中心</span></a>&gt<span>招商管理</span>&gt<span>发布招商信息</span></p>
+                </div>
+                <!--招商信息详情-->
+                <div class="zs_container">
+                    <div class="zs_con_title">
+                        <span>*</span>选择商品大类<span>（提示：下列选项为单选，请正确选择您所发布的商品类别，一经选择，不可更改）</span>
+                    </div>
+                    <div class="zs_con_kind">
+                    </div>
+                    <div class="zs_next_step">
+                        <a href="javascript:;" class="next_step">下一步</a>
+                    </div>
+                    <div class="zs_explain">
+                        <div class="zs_explain_wrap">
+                            <h2>说明：</h2>
+                            <p>1. 您发布任何招商产品，必须具有国家食品药品监督管理总局核发的各“准”字批号，且不得发布麻醉类、精神类、毒性、放射性、戒毒类、医疗机构制剂类及
+                                国家法律法规规定不允许宣传的其它药品。</p>
+                            <p>2. 若您发布保健品，必须具有国家食品药品监督管理总局核发的“国食健字”批号，且严格按照核准的内容发布。</p>
+                            <p>3. 若您发布医疗器械，必须具有国家食品药品监督管理总局核发的“医疗器械注册证”，且严格按照核准的内容发布。</p>
+                            <p>4. 其它未特别说明的商品，也均须具有国家相关机构核准的证书或批号，且不违反国家相关法律法规。</p>
+                            <p>5. 您发布的商品信息均需经当代医药市场网人工审核方予在页面展示，且当代医药市场网保留以下权利：</p>
+                            <p>① 对您所发布的信息进行重新编辑、删除的权利；</p>
+                            <p>② 您所发布的商品造成我方经济、声誉、刑事的损失，保留对您追溯责任的权利。</p>
+                            <span>点击 下一步 代表您认可并保证遵守此说明内容</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function(){
+        memberTop();
+        //招商选择商品大类数据
+        var token = $.cookie('userToken');
+        if(token) {
+            var url = DD_api.parentTypeGoods,
+                list = {userToken: token},
+                res = getAjax(url, list),
+                data = res.data,
+                html = '',
+                GoodsType = $('.zs_con_kind'),
+                arr=[],
+                next_step = $('.next_step');
+            for (var i = 0; i < data.length; i++) {
+                html += '<span data-id="' + data[i].id + '">' + data[i].goodsParentsName + '</span>';
+            }
+            GoodsType.html(html);
+            GoodsType.on('click', 'span', function () {
+                $(this).addClass('on').siblings().removeClass('on');
+                window.id = $(this).attr('data-id');
+                arr.push(id);
+            });
+            next_step.click(function(){
+                if( arr.length== 0){
+                    alert('请选择一类商品！')
+                    return false;
+                }else{
+                    window.location.href="PublishingInvestment2.html?id="+id;
+                }
+            });
+        }else{
+            alert("您未登录，请登录！");
+            window.location="login.html";
+        }
+    })
+</script>
+</html>

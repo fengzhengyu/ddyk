@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-dpr="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />-->
+    <title>Title</title>
+    <link rel="stylesheet" href="flexible.css">
+    <script src="flexible.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+         html, body{
+             width: 100%;
+             height: 100%;
+             position: relative;
+             padding: 0;
+             margin: 0;
+             overflow: hidden;
+         }
+
+
+        .p1{
+            font-size:18px;
+        }
+        [data-dpr="2"] .p1{
+            font-size: 36px;
+        }
+        [data-dpr="3"] .p1 {
+            font-size: 54px;
+        }
+        .p2{
+            font-size:18px;
+        }
+        [data-dpr="2"] .p2{
+            font-size: 36px;
+        }
+        [data-dpr="3"] .p2{
+            font-size: 54px;
+        }
+        .p3{
+            font-size:18px;
+        }
+
+
+        .container{
+            overflow-x: hidden;
+            overflow-y: auto;
+            /*position: relative;*/
+            height: 100%;
+            max-width: 640px;
+            background-color: white;
+            margin: 0 auto;
+            float: right;
+        }
+
+        .block{
+
+            float: right;
+            margin-top: 1.5625rem;
+            width: 2.5rem;
+            /*width: 3.75rem;*/
+            height: 1.875rem;
+
+            background-color: #0075a9;
+
+        }
+        /* 普通显示屏(设备像素比例小于等于1)使用1倍的图 */
+        .css{
+            background-image: url(img_1x.png);
+        }
+
+        /* 高清显示屏(设备像素比例大于等于2)使用2倍图  */
+        @media only screen and (-webkit-min-device-pixel-ratio:2){
+            .css{
+                background-image: url(img_2x.png);
+            }
+        }
+
+        /* 高清显示屏(设备像素比例大于等于3)使用3倍图  */
+        @media only screen and (-webkit-min-device-pixel-ratio:3){
+            .css{
+                background-image: url(img_3x.png);
+            }
+        }
+
+        /*image-set，它是Webkit的私有属性，也是Css4的一个属性，它是为了解决Retina屏幕下的图像显示而生。*/
+        .css {
+            background-image: url(1x.png);    /*不支持image-set的情况下显示*/
+            background: -webkit-image-set(
+                    url(1x.png) 1x,/* 支持image-set的浏览器的[普通屏幕]下 */
+                    url(2x.png) 2x,/* 支持image-set的浏览器的[2倍Retina屏幕] */
+                    url(3x.png) 3x/* 支持image-set的浏览器的[3倍Retina屏幕] */
+            );
+        }
+        目前移动端的支
+    </style>
+
+</head>
+<body>
+<p class="p1">我 </p>
+<p class="p2">爱</p>
+<p class="p3">你</p>
+
+<div class="container">
+
+    <div class="block"></div>
+
+</div>
+
+</body>
+</html>

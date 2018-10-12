@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>发布招商信息-类别</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script src="js/api.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.form.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/PublishingInvestment.js"></script>
+</head>
+<body  style="background: #f1f5f8;">
+    <!--头部内容-->
+    <div class="h_header">
+        <div class="w1200 margin_auto">
+            <a href="index.html" class="top_tit fl">当代医药市场网</a>
+            <a href="MemberIndex.html" class="top_logo fl">
+                <div  class="logo fl"><img src="images/top_user.png" alt="图片"/></div>
+                <div class="top_tit2 fl">
+                    <p>会员中心</p>
+                </div>
+            </a>
+            <!--顶部右边内容-->
+            <div class="top_right fr">
+                <div class="user_logo"><img src="images/zzc.png" alt="图片"/></div>
+                <div class="account"></div>
+                <!--<div class="news"><span>0</span></div>-->
+                <div class="top_close"></div>
+            </div>
+        </div>
+    </div>
+    <!--主体内容-->
+    <div class="h_main">
+        <div class="w1200 margin_auto ovhidden">
+            <!--左侧内容-->
+            <div class="main_left fl">
+                <div class="tell">
+                    <span><img src="images/top_tell.png" alt=""/></span>客服电话：010-59492293
+                </div>
+                <div class="fold_menu">
+                    <dl class="menu_list">
+                        <dt class=""><span class="sp1"></span>会员设置<i></i></dt>
+                        <dd class="">
+                            <ul>
+                                <li><a href="MemberBasic.html"><span></span>基本信息设置</a></li>
+                                <li><a href="MemberSecurity.html"><span></span>账号安全设置</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="menu_list">
+                        <dt class="on"><span class="sp2"></span>招商管理<i></i></dt>
+                        <dd class="on">
+                            <ul>
+                                <li><a href="PublishingInvestment.html"><span></span>发布招商信息</a></li>
+                                <li><a href="ManagementInvestment.html"><span></span>管理招商信息</a></li>
+                                <li><a href="CollectInvestment.html"><span></span>收藏招商信息</a></li>
+                                <li><a href="receiveMessage.html"><span></span>收到代理信息</a></li>
+                                <li><a href="MyMessage.html"><span></span>我的留言信息</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="menu_list">
+                        <dt class=""><span class="sp3"></span>求购管理<i></i></dt>
+                        <dd class="">
+                            <ul>
+                                <li><a href="PublishBuy.html"><span></span>发布求购信息</a></li>
+                                <li><a href="ManagementBuy.html"><span></span>管理求购信息</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="menu_list">
+                        <dt><span class="sp6"></span>商铺管理<i></i></dt>
+                        <dd>
+                            <ul>
+                                <li><a href="ViewShops.html"><span></span>查看我的商铺</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="menu_list">
+                        <dt><span class="sp7"></span>积分管理<i></i></dt>
+                        <dd>
+                            <ul>
+                                <li><a href="IntegralManagement.html"><span></span>积分管理信息</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <!--右侧内容-->
+            <div class="main_right fr">
+                <!--后代标题-->
+                <div class="offspring_tit">
+                    <p><a href="MemberIndex.html"><i class="home"></i><span>会员中心</span></a>&gt<span>招商管理</span>&gt<span>发布招商信息</span></p>
+                </div>
+                <!--招商信息详情-->
+                <div class="zs_container">
+                    <div class="zs_con_title2">
+                        <span>*</span>选择选择所属<a href="javascript:;" id="kind_name">"中西药品类"</a><span>（提示：下列选项为单选，请正确选择您所发布的商品类别，一经选择，不可更改）</span>
+                    </div>
+                    <div class="zs_con_kind2">
+                    </div>
+                    <form  id="form1"   method="post" name="file_upload" enctype="multipart/form-data" >
+                    <div class="zs_con_details">
+                        <ul>
+                            <li>
+                                <span class="text"><i>*</i>商品标题:</span>
+                                <div class="content">
+                                    <input type="text" id="goodsName" name="goodsName" class="txt" placeholder="请填写合法的宣传用语以及商品名等，20字以内" maxlength="21"/>
+                                    <span class="textSpan" id="goodsNameS"></span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="text"><i>*</i>商品图片:</span>
+                                <div class="upload">
+                                    <label for="goodsPhoto" class="uploadImg">上传商品图片</label>
+                                    <input type="file" name="goodsPhoto" id="goodsPhoto" class="file" accept="image/png, image/jpeg, image/gif, image/jpg" style="position: absolute;clip: rect(0,0,0,0);"/>
+                                    <div class="fileText">支持gif，jpg，png，大小200kb以内</div>
+                                    <span class="textSpan" id="goodsPhotoS"></span>
+                                  </div>
+                            </li>
+                            <li>
+                                <span class="text"><i>*</i>批准文号:</span>
+                                <div class="content">
+                                    <input type="text" id="approve" name="approve" class="txt" placeholder="请填写商品批准文号，需与药监部门核准的商品对应"/>
+                                    <span class="textSpan" id="approveS"></span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="text"><i>*</i>生产企业:</span>
+                                <div class="content">
+                                    <input type="text" id="productCompany" name="productCompany" class="txt" placeholder="请输入生产企业名称"/>
+                                    <span class="textSpan" id="productCompanyS">11</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="text"><i></i>功能主治:</span>
+                                <div class="content">
+                                    <input type="text" id="effect" name="effect" class="txt" placeholder="请填写功能主治，不可填写任何联系方式，限100字以内" maxlength="101"/>
+                                    <span class="textSpan" id="effectS">11</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="text"><i></i>主要成分:</span>
+                                <div class="content">
+                                    <input type="text" id="basis" name="basis" class="txt" placeholder="请填写主要成分，不可填写任何联系方式，限100字以内" maxlength="101"/>
+                                    <span class="textSpan" id="basisS">11</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="text"><i></i>产品规格:</span>
+                                <div class="content">
+                                    <input type="text" id="norms" name="norms" class="txt" placeholder="请输入产品规格"/>
+                                    <span class="textSpan" id="normsS">11</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="text"><i>*</i>招商需求:</span>
+                                <div class="content">
+                                    <input type="text" id="require" name="require" class="txt" placeholder="认真填写招商要求能，不可填写任何联系方式，限100字以内" maxlength="101"/>
+                                    <span class="textSpan" id="requireS">11</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="text"><i>*</i>联系人:</span>
+                                <div class="content">
+                                    <input type="text" id="relationPerson" name="relationPerson" class="txt" maxlength="11"/>
+                                    <span class="textSpan" id="personS">11</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="text"><i>*</i>联系手机:</span>
+                                <div class="content">
+                                    <input type="text" class="txt" id="phone" name="phone"/>
+                                    <span class="textSpan" id="phoneS">11</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="text"><i></i>联系QQ:</span>
+                                <div class="content">
+                                    <input type="text" id="qq" name="qq" class="txt" placeholder="QQ用于代理商联系商家"/>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="text"><i></i>联系电话:</span>
+                                <div class="content">
+                                    <input type="text" id="telephone" name="telephone" class="txt"/>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="text"><i></i>联系地址:</span>
+                                <div class="content">
+                                    <input type="text" id="addressInfo" name="addressInfo" class="txt"/>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="zs_next_step">
+                        <input type="button" class="next_step1" value="提 交"/>
+                    </div>
+                    </form>
+                    <div class="zs_explain">
+                        <div class="zs_explain_wrap">
+                            <h2>说明：</h2>
+                            <p>1. 您所发布的商品信息须符合《中华人民共和国药品管理法》、《中华人民共和国广告法》及相关法律法规的规定，真实、合法，不得含有任何夸大虚假内容。</p>
+                            <p>2. 您所发布的保健食品各项信息必须经过国家食品药品监督管理总局核准，并严格按照核准的内容发布，各项信息需相互对应。严格执行《中华人民共和国广告法》及相关规定，保健食品不得含有下列内容：</p>
+                            <p>（一）表示功效、安全性的断言或者保证；</p>
+                            <p>（二）涉及疾病预防、治疗功能；</p>
+                            <p>（三）声称或者暗示广告商品为保障健康所必需；</p>
+                            <p>（四）与药品、其他保健食品进行比较；</p>
+                            <p>（五）利用广告代言人作推荐、证明；</p>
+                            <p>（六）法律、行政法规规定禁止的其他内容。</p>
+                            <p>3. 您发布的商品信息需经当代医药市场网人工审核方予在页面展示。</p>
+                            <p>4. 当代医药市场网保留以下权利：</p>
+                            <p>&nbsp;&nbsp;&nbsp;① 对您所发布的信息进行重新编辑、删除的权利。</p>
+                            <p>&nbsp;&nbsp;&nbsp;② 您所发布的商品造成我方经济、声誉、刑事的损失，保留对您追溯责任的权利。</p>
+                            <span>点击 下一步 代表您认可并保证遵守此说明内容</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    memberTop();
+
+</script>
+</html>

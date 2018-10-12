@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>登陆页</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/iconfont.css"/>
+    <link rel="shortcut icon" href="images/title_logo.png"/>
+    <script src="js/api.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+
+
+</head>
+<body>
+     <div class="r_header">
+         <div class="w1000 margin_auto">
+             <div class="top">
+               <div class="logo">
+                   <a href="index.html"><img src="images/logo.png" alt=""/></a>
+               </div>
+             </div>
+             <div class="main">
+                <div class="main_l fl">
+                    <p class="p1">若您有任何疑问请与客服联系</p>
+                    <p class="p2">咨询热线：<span>010-59492293</span></p>
+                    <p class="p3">在线客服：<a target="_blank" class="left_QQ" href="http://wpa.qq.com/msgrd?v=3&uin=2848324377&site=qq&menu=yes">
+                        <img src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a></p>
+                </div>
+                 <div class="main_r fl">
+                     <form action="index.html" method="post" id="form1">
+                         <div class="login_div">
+                             <ul>
+                                 <li style="margin-bottom: 15px">
+                                     <div class="title1"><span>*</span>登陆手机号：</div>
+                                     <div class="login_input_bg userbg"><i class="iconfont icon-yonghuming"></i><input type="text" name="username" class="login_input" id="userName" placeholder="请输入手机号" onfocus="$('.login_showDiv1').hide();" onblur="userNoEmpty();"/></div>
+                                     <div class="login_showDiv1" id="userDiv"><span id="userSpan"></span></div>
+                                 </li>
+                                 <li>
+                                     <div class="title1"><span>*</span>登陆密码：</div>
+                                     <div  class="login_input_bg pass_bg"><i class="iconfont icon-mima"></i><input type="password" name="password" class="login_input" id="password" placeholder="请输6~20位密码" onfocus="$('.login_showDiv1').hide();" onblur="passNoEmpty();"/></div>
+                                     <div class="login_showDiv1" id="passwordDiv"><span id="passwordSpan"></span></div>
+                                 </li>
+                                 <li>
+                                     <div class="title1"></div>
+                                     <div class="title2">
+                                         <div class="automatic_login"><input type="checkbox" id="check" />记住密码</div>
+                                         <div class="forget_pass">
+                                             <a href="register.html">注册</a>
+                                             |
+                                             <a href="forgotPass.html">忘记密码？</a>
+
+                                         </div>
+                                         <div class="clear"></div>
+                                         <input type="hidden" id="info" value="" />
+                                         <input type="button" value="登  陆" class="login_btn" onclick="go()"/>
+                                     </div>
+                                 </li>
+                             </ul>
+                         </div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+</body>
+<script type="text/javascript">
+    /*回车提交*/
+        document.onkeydown = function(e){
+            var ev = document.all ? window.event : e;
+            if(ev.keyCode==13) {
+                go();
+            }
+        };
+    //记住密码
+    if ($.cookie("rmbUser") == "true") {
+        $("#check").attr("checked", true);
+        $("#userName").val($.cookie("username1"));
+        $("#password").val($.cookie("password1"));
+    }
+    function remember() {
+        if ($("#check").prop("checked")) {
+            var str_username = $("#userName").val();
+            var str_password = $("#password").val();
+            $.cookie("rmbUser", "true", {expires: 7,path:'/'}); //存储一个带7天期限的cookie
+            $.cookie("username1", str_username, {expires: 7,path:'/'});
+            $.cookie("password1", str_password, {expires: 7,path:'/'});
+        }
+        else {
+            $.cookie("rmbUser", "false", {expire: -1,path:'/'});
+            $.cookie("username1", "", {expires: -1,path:'/'});
+            $.cookie("password1", "", {expires: -1,path:'/'});
+        }
+    }
+    //账号判断
+    function userNoEmpty(){
+        var user = $('#userName').val();
+        if(user == '' || user == null){
+            $('#userSpan').html("登录手机不能为空");
+            $('#userDiv').css('display','inline-block');
+            return;
+        }
+        var reg=/^1[34578]{1}\d{9}$/;
+        if(!reg.test(user)){
+            $('#userSpan').html("手机格式不正确");
+            $('#userDiv').css('display','inline-block');
+            return;
+        }
+    }
+    //密码判断
+    function passNoEmpty(){
+        var pass = $('#password').val();
+        if(pass == '' || pass == null){
+            $('#passwordSpan').html("密码不能为空");
+            $('#passwordDiv').css('display','inline-block');
+            return;
+        }
+        if(pass.length>20 || pass.length<6){
+
+            $('#passwordSpan').html("密码6-20位,请正确输入");
+            $('#passwordDiv').show();
+            return;
+        }
+
+    }
+    //表单提交
+    function go(){
+        remember();
+        var user = $('#userName').val();
+        if(user == '' || user == null){
+            $('#userSpan').html("登录手机不能为空");
+            $('#userDiv').css('display','inline-block');
+            return;
+        };
+
+        var pass = $('#password').val();
+        if(pass == '' || pass == null){
+            $('#passwordSpan').html("密码不能为空");
+            $('#passwordDiv').css('display','inline-block');
+            return;
+        }
+        $.ajax({
+            url:  DD_api.sendSign,
+            type:'post',
+            data:{phone:user,password:pass},
+            async:false,
+            dataType:"json",
+            cache: false,
+            crossDomain: true == !(document.all),
+            success:function(res){
+                if(res.flag =='success'){
+                    var name = res.data.memberName;
+                    var phone = res.data.phone;
+                    var token = res.data.userToken;
+                    var time = res.data.addTime;
+                    var photo = res.data.headPhoto;
+                    var email = res.data.email;
+                    var goldTotal = res.data.goldTotal;
+                    console.log(res);
+                    $.cookie('userName',name,{expires:1,path:'/'});
+                    $.cookie('userPhone',phone,{expires:1,path:'/'});
+                    $.cookie('userToken',token,{expires:1,path:'/'});
+                    $.cookie('userPhoto',photo,{expires:1,path:'/'});
+                    $.cookie('userTime',time,{expires:1,path:'/'});
+                    $.cookie('userEmail',email,{expires:1,path:'/'});
+                    $.cookie('goldTotal',goldTotal,{expires:1,path:'/'});
+
+                    window.location.href="index.html";
+                }else{
+                    $('#passwordSpan').html("密码错误或用户名不存在!");
+                    $('#passwordDiv').css('display','inline-block');
+                };
+            },
+            error:function(){
+                alert("Ajax获取数据失败！");
+            }
+        })
+    }
+</script>
+</html>
