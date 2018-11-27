@@ -156,7 +156,7 @@
                     var photo = res.data.headPhoto;
                     var email = res.data.email;
                     var goldTotal = res.data.goldTotal;
-                    console.log(res);
+                
                     $.cookie('userName',name,{expires:1,path:'/'});
                     $.cookie('userPhone',phone,{expires:1,path:'/'});
                     $.cookie('userToken',token,{expires:1,path:'/'});
@@ -164,7 +164,7 @@
                     $.cookie('userTime',time,{expires:1,path:'/'});
                     $.cookie('userEmail',email,{expires:1,path:'/'});
                     $.cookie('goldTotal',goldTotal,{expires:1,path:'/'});
-
+                   
                     window.location.href="index.html";
                 }else{
                     $('#passwordSpan').html("密码错误或用户名不存在!");

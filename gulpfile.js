@@ -36,7 +36,7 @@ gulp.task('copy',function(){
         .pipe(gulp.dest('dist'));//����ļ�
 });
 gulp.task('htmlmini', function () {
-    gulp.src('./app/healthy.html')
+    gulp.src('./app/*.html')
         .pipe(htmlmini())
         .pipe(gulp.dest('dist'));
 });

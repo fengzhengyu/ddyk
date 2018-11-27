@@ -3,7 +3,7 @@
  */
 //47.94.249.58
 //var DD_host='http://192.168.1.10';
-var DD_host='http://47.94.249.58/ddyk/Api/Goods/selectGoodsSunType';
+var DD_host='http://47.94.249.58'; ///ddyk/Api/Goods/selectGoodsSunType
 var DD_api={
     //短信验证接口
     sendMessage                : DD_host + '/ddyk/index.php/Api/sign/sendMessage',
