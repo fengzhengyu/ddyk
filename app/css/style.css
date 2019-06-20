@@ -566,11 +566,15 @@
     float: left;
     position: absolute;
 }
+.container li:first-child{
+    z-index: 5;
+}
 
 .slider .btn {
     position: absolute;
     bottom: 8px;
     left: 50%;
+    z-index: 6;
 }
 
 .slider .btn li {
@@ -583,6 +587,7 @@
 
 .slider .btn li.active {
     background: #ff3c3c;
+   
 }
 
 .slider .prev, .slider .next {
@@ -592,6 +597,7 @@
     position: absolute;
     opacity: 0.4;
     top: 130px;
+    z-index: 6;
 }
 
 .slider .prev {

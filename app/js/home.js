@@ -237,12 +237,14 @@ $(function () {
         directionBtn.css('display', 'none');
     } else {
         for (var i = 0; i < dataAd.length; i++) {
+      
             slider_content += '<li><a href="' + dataAd[i].jumpUrl + '" target="_blank"><img src="' + dataAd[i].picture + '" alt="图片已丢失"/></a></li>';
             slider_list += '<li></li>'
         }
         slider_num.html(slider_list);
-        slider_num.find('li:first').addClass('active');
+       
         slider.html(slider_content);
+        slider_num.find('li:first').addClass('active');
     }
     //热门推荐数据
     if (!hotData) {
@@ -585,6 +587,7 @@ function loop(obj, sliderBtn, sliderCon, prev, next, slider_list) {
         timer = null,
         slider_btn = $(sliderBtn),
         btnW = $(slider_list).outerWidth(true);//
+        
     $(slider_list).css('margin-left', -btnW / 2);
 
     var len = slider_btn.length;
@@ -594,13 +597,14 @@ function loop(obj, sliderBtn, sliderCon, prev, next, slider_list) {
         tab();
     });
 
-    timer = setInterval(function () {
-        i++;
-        if (i == len) {
-            i = 0;
-        }
-        tab();
-    }, 2000);
+    // timer = setInterval(function () {
+    //     i++;
+    //     if (i == len) {
+    //         i = 0;
+    //     }
+    //     tab();
+    // }, 2000);
+
     $(obj).hover(function () {
         clearInterval(timer);
     }, function () {

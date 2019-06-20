@@ -66,9 +66,9 @@ $(function(){
             var url= DD_api.videoInfo,
                 list = {videoId:id,userToken:token},
                 res = getAjax(url,list);
-            console.log(token)
-            console.log(id)
-            console.log(res)
+            // console.log(token)
+            // console.log(id)
+            // console.log(res)
                 if(res.code == 1){
                     var html = '<div class="title">温馨提示：<span class="close">×</span></div><div class="content" id="videoInfo"></div><div class="btnWrapper"><span class="confirm" >确定</span><span class="cancel">取消</span></div>';
                     popup.html(html);

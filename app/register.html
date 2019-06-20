@@ -23,7 +23,7 @@
                  <!--主体左侧内容-->
                 <div class="main_l fl">
                     <p class="p1">若您有任何疑问请与客服联系</p>
-                    <p class="p2">咨询热线：<span>010-59492293</span></p>
+                    <p class="p2">咨询热线：<span>010-59490066</span></p>
                     <p class="p3">在线客服：<a target="_blank" class="left_QQ" href="http://wpa.qq.com/msgrd?v=3&uin=2848324377&site=qq&menu=yes">
                         <img src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a></p>
                     <p><img src="images/register1.png" alt=""/></p>
@@ -211,7 +211,7 @@
         if(phone == '' || phone == null){
             $('#phoneSpan').html("手机号不能为空");
             $('#phoneDiv').css('display','inline-block');
-            return;
+            return ;
         }
         var reg=/^1\d{10}$/;
         if(!reg.test(phone)){
@@ -226,6 +226,7 @@
         if(code == '' || code == null){
             $('#codeSpan').html("验证码不能为空");
             $('#codeDiv').css('display','inline-block');
+            return ;
         }
 
     };
@@ -235,13 +236,13 @@
         if(phone == '' || phone == null){
             $('#phoneSpan').html("手机号不能为空");
             $('#phoneDiv').css('display','inline-block');
-            return;
+            return ;
         }
         var reg=/^1\d{10}$/;
         if(!reg.test(phone)){
             $('#phoneSpan').html("手机号格式不正确");
             $('#phoneDiv').css('display','inline-block');
-            return;
+            return ;
         }
         if(phone != '' || phone != null){
             $.ajax({
@@ -253,22 +254,19 @@
                 //cache: false,
                 crossDomain: true == !(document.all),
                 success:function(res){
-                    console.log(1);
-                console.log(res);
+               
+                // console.log(res);
+             
                     if(res.flag == "success"){
                         time($('#btn_code'));
 
                     }else{
                         $('#phoneSpan').html(res.info);
-                        $('#phoneDiv').css('display','inline-block');
-                       setTimeout(function(){
-                           window.location = "login.html";
-                       },3000)
-
+                        $('#phoneDiv').css('display','inline-block');               
                     }
                 },
-                error:function(){
-                    alert(2)
+                error:function(err){
+                    console.log(err);
                 }
             })
         }
@@ -318,7 +316,7 @@
         if($('#checkbox1').prop('checked')==false){
             $('#server_agreementSpan').html("请确定使用协议");
             $('#server_agreementDiv').css('display','inline-block');
-            return;
+            return ;
         }else{
             $('#server_agreementDiv').hide();
         }
