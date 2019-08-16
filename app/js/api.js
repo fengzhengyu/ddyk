@@ -152,6 +152,8 @@ var DD_api={
     //基本信息保存接口
     insertMemberInfo           : DD_host + '/ddyk/Api/Member/insertMemberInfo',
 
+    memberCancel           : DD_host + '/ddyk/Api/Member/membercancel',
+
     //修改会员昵称接口
     updateMemberName           : DD_host + '/ddyk/Api/Member/updateMemberName',
 

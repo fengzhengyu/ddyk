@@ -523,6 +523,57 @@
     outline: none;
     line-height: 26px;
 }
+/* 上传资质 */
+.contact_information  .image-box{
+    min-width: 500px;
+    display: inline-block;
+    position: relative;
+
+}
+.contact_information .upload-btn{
+    display: inline-block;
+    margin-left: 10px;
+    width: 100px;
+    height: 26px;
+    border: 1px solid #999;
+    text-align: center;
+    line-height: 26px;
+}
+.contact_information .upload{
+    width: 100px;
+    height: 26px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #999;
+    opacity: 0;
+    opacity: 0;
+    filter: opacity(0);
+
+}
+.contact_information .file-text{
+    display: inline-block;
+    padding: 0 10px;
+    position: absolute;
+    left: 120px;
+    top: 0;
+    line-height: 26px;
+    
+}
+.contact_information .show-img{
+    display: none;
+    padding: 2px 10px;
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 300px;
+    top: 0;
+    margin-top: 5px;
+  
+    
+ 
+
+}
+
 .contact_information .sex{
     vertical-align: middle;
     margin: 10px 10px 10px 10px;

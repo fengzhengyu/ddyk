@@ -12,7 +12,7 @@ var concat = require("gulp-concat");  //�ϲ��ļ�
 var imagemin = require('gulp-imagemin');//ѹ��ͼƬ
 
 gulp.task('compressJs',function(){
-    gulp.src('./app/js/videoDetails.js')//��ȡ�ļ���ͬʱ���˵�.min.js�ļ�
+    gulp.src('./app/js/ViewShops.js')//��ȡ�ļ���ͬʱ���˵�.min.js�ļ�
         .pipe(uglify({
             compress: {
                 drop_console: true //ȥ��console.log()
@@ -21,7 +21,7 @@ gulp.task('compressJs',function(){
         .pipe(gulp.dest('dist/js'));//����ļ�
 });
 gulp.task('compressCss',function(){
-    gulp.src('./app/css/*.css')///Ҫѹ����css
+    gulp.src('./app/css/common.css')///Ҫѹ����css
         .pipe(minifyCss({
             advanced: false,//���ͣ�Boolean Ĭ�ϣ�true [�Ƿ����߼��Ż����ϲ�ѡ�����ȣ�]
             compatibility: 'ie7',//����ie7�����¼���д�� ���ͣ�String Ĭ�ϣ�''or'*' [���ü���ģʽ�� 'ie7'��IE7����ģʽ��'ie8'��IE8����ģʽ��'*'��IE9+����ģʽ]
@@ -36,7 +36,7 @@ gulp.task('copy',function(){
         .pipe(gulp.dest('dist'));//����ļ�
 });
 gulp.task('htmlmini', function () {
-    gulp.src('./app/register.html')
+    gulp.src('./app/*.html')
         .pipe(htmlmini())
         .pipe(gulp.dest('dist'));
 });

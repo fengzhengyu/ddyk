@@ -17,11 +17,25 @@ $(function(){
     }
     //获取 URL子类的text
     var sunNameText = getQueryString('sunName'),
+         companyUrl = DD_api.userSelectShopGoods,
+        companyList = {goodsId:loc},
+        companyRes = getAjax(companyUrl,companyList),
+        companyData = companyRes.dataMember
+        companyName = $('#companyName') ,
+        companyLicense = $('#License'),
+        companyQualification = $('#Qualification'),
+        companyAddress = $('#Address'),
+        // companyLicense = $('#License'),
+        // companyLicense = $('#License'),
+        // companyLicense = $('#License'),
+     
     //详情渲染
         url1 = DD_api.merchantsDetailsGoods,
         list={goodsId:loc},
         res = getAjax(url1,list),
         data = res.data,
+
+
         Details_img = $('.Details_log>img'),
         Details_img2 =  $('.Details_log2>img'),
         Details_text1 = $('.Details_explain .text1'),
@@ -29,10 +43,18 @@ $(function(){
         Details_text3 = $('.Details_explain .text3'),
         Details_text4 = $('.Details_explain .text4 ul'),
         Details_talk = $('.Details_talk'),
+
+
         details='<dl><dt>| 主要成分：</dt><dd>'+data.basis+'</dd></dl><dl><dt>| 产品介绍：</dt><dd>详见说明</dd></dl><dl><dt>| 产品规格：</dt><dd>'+data.norms+'</dd></dl><dl><dt>| 招商要求：</dt><dd>'+data.require+'</dd></dl> <dl class="dl4"><dt>| 联系方式：</dt><dd>招商热线：'+data.relationType+'</dd><dd>联 系人：'+data.relationPerson+'</dd></dl>',  //<dd>企业名称：'+data.productCompany+'</dd><dd>企业地址：'+data.addressInfo+'</dd>
         text3Span = '<span class="sp1">批准文号</span><span class="sp2">'+data.approve+'</span><span class="sp3"><a href="http://app1.sfda.gov.cn/datasearch/face3/dir.html">[国家食药局查询]</a></span>',
         text4Li = '<li><span>生产企业：'+data.productCompany+'</span></li><li><span>发布时间：</span>'+data.addTime+'</li><li><span>更新时间：</span>'+data.updateTime+'</li><li><span>在线咨询：</span><a target="_blank" class="left_QQ" href="http://wpa.qq.com/msgrd?v=3&uin='+data.QQ+'&site=qq&menu=yes"><img src="images/qq22.png" alt="在线客服" title="在线客服" /></a><i class="seek">联系时请说明来自“当代医药市场网”，会获得更多优惠和支持！</i></li>';
     //console.log(res)
+    console.log(companyData)
+    companyName.html(companyData.company || '企业名称尚未填写');
+    companyLicense.attr('data-img',companyData.LicensePhoto);
+    companyQualification.attr('data-img',companyData.QualificationPhoto);
+    companyAddress.html(companyData.address);
+ 
     Details_img.attr('src',data.photoUnify);
     Details_img2.attr('src',data.photoUnify);
     Details_text1.html(data.goodsName);
@@ -41,6 +63,8 @@ $(function(){
     Details_text4.html(text4Li);
     Details_talk.html(details);
     document.title = data.goodsName;
+
+
     //全国省数据
     var cityUrl = DD_api.provinceData,
         cityRes = getAjax(cityUrl),
@@ -190,6 +214,28 @@ $(function(){
      
 
 
+    //   查看
+    $('.show-img').click(function(e){
+        var src = $(this).attr('data-img');
+        // console.log(src)
+        if(src == null){
+            alert('厂家还未上传！');
+            return;
+        }
+        popup($('#imgPopup'));
+        var img = new Image();
+        img.src = src;
+
+        
+
+        $('#imgPopup').html(img)
+        e.stopPropagation();
+
+    })
+   $(document).click(function () {  
+    $('#imgPopup').hide();
+   })
+ 
 
     
 });

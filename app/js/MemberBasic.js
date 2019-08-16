@@ -7,6 +7,8 @@ $(function(){
     var Province =  $('.province'),
         City = $('.city'),
         Country =$('.country'),
+        updateFile1 = $('#updatefile1'),
+        updateFile2 = $('#updatefile2'),
         company = $('#company'),
         shopName = $('#shopName'),
         person = $('#person'),
@@ -33,37 +35,44 @@ $(function(){
         top_ten_kind = $('.top_ten_kind'),//经营品类选择器
         save = $('.information_btn .btn'),//保存btn
         modifyData = modifyRes.data,//修改数据list
-        companyTypeVal = modifyData.companyType, //修改后信息
-        addressVal = modifyData.address, //修改后信息
-        companyManageTypeVal = modifyData.companyManageType,//修改后信息
-        companyVal = modifyData.company, //修改后信息
-        shopNameVal = modifyData.shopName, //修改后信息
-        personVal = modifyData.relationPerson, //修改后信息
-        sexVal = modifyData.sex,////修改后信息
-        phoneVal = modifyData.relationPhone, //修改后信息
-        detailVal = modifyData.addressDetail, //修改后信息
-        mobileVal = modifyData.relationMobile, //修改后信息
-        emailVal = modifyData.relationEmail, //修改后信息
-        qqVal = modifyData.QQ, //修改后信息
-        weChatVal = modifyData.weChat,//修改后信息
+
+        companyTypeVal = modifyData.companyType, //修改后企业类型信息
+        addressVal = modifyData.address, //修改后三级联动信息
+        companyManageTypeVal = modifyData.companyManageType,//修改后经营品类信息
+
+        updateImg1 = modifyData.LicensePhoto ,
+        updateImg2 = modifyData.QualificationPhoto,
+
+        companyVal = modifyData.company, //修改后公司信息
+        shopNameVal = modifyData.shopName, //修改后店铺名信息
+        personVal = modifyData.relationPerson, //修改后联系人
+        sexVal = modifyData.sex,////修改后性别
+        phoneVal = modifyData.relationPhone, //修改后手机
+        detailVal = modifyData.addressDetail, //修改后地址
+        mobileVal = modifyData.relationMobile, //修改后座机
+        emailVal = modifyData.relationEmail, //修改后邮箱
+        qqVal = modifyData.QQ, //修改后QQ
+        weChatVal = modifyData.weChat,//修改后微信
     //渲染省级数据
         url = DD_api.provinceData,
         res = getAjax(url),
         province = res.data,
         Pval = '';
 
-    console.log(modifyRes)
+    // console.log(modifyData)
     Province.html(provinceHtml);
     City.html(cityHtml);
     Country.html(countryHtml);
     //企业类型数据
     for(var i=0;i<data.length;i++){
-        type1 += '<label for="companyId'+i+'"><input type="checkbox" name="companyType" id="companyId'+i+'" value="'+data[i].companyId+'"/>'+data[i].companyName+'</label>';
+        // name="companyType"
+        type1 += '<label for="companyId'+i+'"><input type="checkbox"  id="companyId'+i+'" value="'+data[i].companyId+'"/>'+data[i].companyName+'</label>';
     }
     enterprise_type.append(type1);
     //经营品类数据
     for(var i=0;i<data1.length;i++){
-        type2 += '<label for="manageId'+i+'"><input type="checkbox" name="companyManageType" id="manageId'+i+'" value="'+data1[i].manageId+'"/>'+data1[i].manageTypeName+'</label>';
+        //  name="companyManageType"
+        type2 += '<label for="manageId'+i+'"><input type="checkbox" id="manageId'+i+'" value="'+data1[i].manageId+'"/>'+data1[i].manageTypeName+'</label>';
     }
     top_ten_kind.append(type2);
     //省级数据
@@ -91,8 +100,8 @@ $(function(){
                 urlC= DD_api.countryData,
                 resC = getAjax(urlC,listC),
                 countryData = resC.data;
-            console.log(pid)
-            console.log(cid)
+            // console.log(pid)
+            // console.log(cid)
                 if(resC.flag == 'success'){
                     var content = '';
                     for(var i=0;i<countryData.length;i++){
@@ -142,6 +151,33 @@ $(function(){
         if(mobileVal == 0){
             mobileVal = '';
         }
+        if(updateImg1){
+            updateFile1.siblings('.show-img').show().attr('data-img',updateImg1);
+    
+
+        }
+        if(updateImg2){
+            updateFile2.siblings('.show-img').show().attr('data-img',updateImg2);
+        }
+        
+        $('.show-img').click(function(e){
+            var src = $(this).attr('data-img');
+            // console.log(src)
+            popup($('#imgPopup'));
+            var img = new Image();
+            img.src = src;
+
+            
+
+            $('#imgPopup').html(img)
+            e.stopPropagation();
+
+        })
+       $(document).click(function () {  
+        $('#imgPopup').hide();
+       })
+     
+
         company.val(companyVal);
         shopName.val(shopNameVal);
         person.val(personVal);
@@ -230,6 +266,7 @@ $(function(){
             cityV =  City.children('option:selected').val(),
             countryV =  Country.children('option:selected').val(),
             sexV = $('input[name="sex"]:checked').val(),
+
             companyV = company.val(),
             shopNameV = shopName.val(),
             personV = person.val(),
@@ -261,17 +298,34 @@ $(function(){
                 return;
             }
         }
-        var url = DD_api.insertMemberInfo,
-            list = {userToken:token,companyType:companyType,address:cityArr,companyManageType:manageType,company:companyV,shopName:shopNameV,relationPerson:personV,relationPhone:phoneV,addressDetail:detailV,relationMobile:mobileV,relationEmail:emailV,QQ:qqV,weChat:weChatV,sex:sexV},
-            res = getAjax(url,list);
-        console.log(typeof sexV)
-        console.log(res)
-        if(res.flag == "success"){
-            alert(res.info);
-        }else{
-            alert(res.info)
-        }
+        var list = {userToken:token,companyType:companyType,address:cityArr,companyManageType:manageType,company:companyV,shopName:shopNameV,relationPerson:personV,relationPhone:phoneV,addressDetail:detailV,relationMobile:mobileV,relationEmail:emailV,QQ:qqV,weChat:weChatV,sex:sexV};
 
+        // console.log(list)
+
+        var options= {
+            url: DD_api.insertMemberInfo,
+            type:"post",
+            data: list ,
+            dataType: "text",
+            contentType: "application/json;charset=utf-8",
+            success:function(data){
+                var res = JSON.parse(data);
+
+            //    console.log(res)
+            //    console.log(data)
+                if(res.flag == 'success'){
+                    alert(res.info);
+                }else{
+                   alert(res.info);
+                }
+            },
+            error : function(XmlHttpRequest, textStatus, errorThrown) {
+                console.log(textStatus);
+                console.log(errorThrown);
+            }
+        };
+        $('#saveForm').ajaxSubmit(options);
+       
 
     })
 });

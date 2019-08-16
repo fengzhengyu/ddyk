@@ -327,6 +327,11 @@
         var phone = $('#phone').val();
         var pass= $('#password').val();
         var authCode = $('#code').val();
+
+        alert('注册功能暂时关闭')
+        return false;
+
+
         $.ajax({
             url: DD_api.sendSign,
             type:'post',

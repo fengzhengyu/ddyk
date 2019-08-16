@@ -24,6 +24,9 @@ $(function(){
         banner =userData.shopPhoto,
         shopName = userData.shopName,
         company = userData.company,
+        LicensePhoto = userData.LicensePhoto,
+        QualificationPhoto = userData.QualificationPhoto,
+    
         person = userData.relationPerson,
         phone = userData.relationPhone,
         address1 = userData.addressDetail,
@@ -35,6 +38,8 @@ $(function(){
         data = res.dataShop,
         bannerBox = $('#shopPhoto'),
         companyBox =$('#company'),
+        licenseBox =$('#license'),
+        qualificationBox =$('#qualification'),
         addressBox =$('#address'),
         phoneBox = $('#phone'),
         personBox = $('#person'),
@@ -46,8 +51,14 @@ $(function(){
         dataList = $('#dataList'),
         totals = $('.totals'),
         pageList = $('#page');
-   // console.log(res)
+//    console.log(res)
+
     bannerBox.attr('src',banner);
+    licenseBox.attr('data-img',LicensePhoto);
+
+    qualificationBox.attr('data-img',QualificationPhoto);
+
+
     companyBox.html(company);
     addressBox.html(address1);
     phoneBox.html(phone);
@@ -61,6 +72,28 @@ $(function(){
     }else{
         document.title = '商铺首页';
     }
+
+    //   查看
+    $('.show-img').click(function(e){
+        var src = $(this).attr('data-img');
+        if(src == null){
+            alert('厂家还未上传！');
+            return;
+        }
+        // console.log(src)
+        popup($('#imgPopup'));
+        var img = new Image();
+        img.src = src;
+
+        
+
+        $('#imgPopup').html(img)
+        e.stopPropagation();
+
+    })
+    $(document).click(function () {  
+        $('#imgPopup').hide();
+       })
     if(res.flag == 'success'){
         if(data){
             for(var i=0;i<data.length;i++){

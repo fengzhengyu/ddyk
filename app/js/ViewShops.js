@@ -16,6 +16,8 @@ $(function(){
         banner =userData.shopPhoto,
         shopName = userData.shopName,
         company = userData.company,
+        LicensePhoto = userData.LicensePhoto,
+        QualificationPhoto = userData.QualificationPhoto,
         person = userData.relationPerson,
         phone = userData.relationPhone,
         address1 = userData.addressDetail,
@@ -28,6 +30,8 @@ $(function(){
         bannerBox = $('#shopPhoto'),
         updatePhoto = $('#updatePhoto'),
         companyBox =$('#company'),
+        licenseBox =$('#license'),
+        qualificationBox =$('#qualification'),
         addressBox =$('#address'),
         phoneBox = $('#phone'),
         personBox = $('#person'),
@@ -41,6 +45,8 @@ $(function(){
         totals = $('.page_total'),
         pageList = $('#page');
     bannerBox.attr('src',banner);
+    licenseBox.attr('data-img',LicensePhoto);
+    qualificationBox.attr('data-img',QualificationPhoto);
     companyBox.html(company);
     addressBox.html(address1);
     phoneBox.html(phone);
@@ -49,6 +55,7 @@ $(function(){
     qqBox.html(QQ);
     weChatBox.html(weChat);
     emailBox.html(email);
+    // console.log(res)
     if(res.flag == 'success'){
         if(data){
             for(var i=0;i<data.length;i++){
@@ -68,6 +75,25 @@ $(function(){
             pageBox.hide();
         }
     }
+
+    //   查看
+    $('.show-img').click(function(e){
+        var src = $(this).attr('data-img');
+        // console.log(src)
+        popup($('#imgPopup'));
+        var img = new Image();
+        img.src = src;
+
+        
+
+        $('#imgPopup').html(img)
+        e.stopPropagation();
+
+    })
+   $(document).click(function () {  
+    $('#imgPopup').hide();
+   })
+ 
     //上传头像
     updatePhoto.change(function(){
         var options= {
@@ -78,7 +104,7 @@ $(function(){
             contentType: "application/json;charset=utf-8",
             success:function(data){
                 var res = JSON.parse(data);
-                console.log(res)
+                // console.log(res)
                 var photo = res.shopPhoto;
                 if(res.flag == 'success'){
                     bannerBox.attr('src',photo);
