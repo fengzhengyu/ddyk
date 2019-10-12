@@ -12,7 +12,7 @@ var concat = require("gulp-concat");  //�ϲ��ļ�
 var imagemin = require('gulp-imagemin');//ѹ��ͼƬ
 
 gulp.task('compressJs',function(){
-    gulp.src('./app/js/ViewShops.js')//��ȡ�ļ���ͬʱ���˵�.min.js�ļ�
+    gulp.src('./app/js/home.js')//��ȡ�ļ���ͬʱ���˵�.min.js�ļ�
         .pipe(uglify({
             compress: {
                 drop_console: true //ȥ��console.log()
@@ -36,7 +36,7 @@ gulp.task('copy',function(){
         .pipe(gulp.dest('dist'));//����ļ�
 });
 gulp.task('htmlmini', function () {
-    gulp.src('./app/*.html')
+    gulp.src('./app/login.html')
         .pipe(htmlmini())
         .pipe(gulp.dest('dist'));
 });

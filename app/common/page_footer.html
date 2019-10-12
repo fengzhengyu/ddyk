@@ -59,14 +59,15 @@
                     <li>咨询时间：周一到周五9：30-17：00　客服热线：010-59492286、010-59492296</li>
                     <li>客服QQ:   <img src="images/QQ.png"/>&nbsp;3153671752 &nbsp;<img src="images/QQ.png"/> &nbsp; 2928446968 &nbsp;<img src="images/QQ.png"/>  &nbsp;3278342383 &nbsp;<img src="images/QQ.png"/>  &nbsp;3153671752</li>
                     <li>联系地址：北京市丰台区星火路1号昌宁大厦4层　邮编：100016　　京ICP备13032938号-2</li>
-                    <li><a href="images/ddyk_yyzz.jpg">当代医康营业执照</a>  </li>
+                    <li><a href="images/ddyk_yyzz.jpg" target="_blank">营业执照</a> &nbsp; &nbsp;<a href="images/ddyk_jyxkz.jpg" target="_blank">电信与信息服务业务经营许可证</a>  &nbsp; &nbsp;<a href="images/ddyk_zgzs.jpg" target="_blank">互联网药品信息服务资格证书</a> &nbsp; &nbsp;<a href="javascript:;" onclick="show()">关于我们</a></li>
+                  
                 </ul>
             </div>
             <div class="f_c_code"></div>
             <div class="f_c_wx"></div>
         </div>
     </div>
-    <div class="footer_bottom">
+    <!-- <div class="footer_bottom">
         <div class="w1200 margin_auto ovhidden" style="background: #454545;">
             <div class="f_b_logo"></div>
             <div class="f_b_text">
@@ -75,5 +76,48 @@
             </div>
             <div class="gif"></div>
         </div>
+    </div> -->
+</div>
+<div class="about-wrrap" id="about">
+    <div class="box">
+        <div class="title">关于我们</div>
+        <span class="close">×</span>
+        <div class="center">
+            <div class="logo"></div>
+            <p>《当代医药市场网》成立于2005年，经国家工信部、药监局、工商局批准的一家医药卫生行业类门户网站。依托多年医药招商媒体运作的经验和资源，与全国众多药企、经销商、医药零售单位组成战略合作联盟，为全国的医药厂商、经销商、代理商及各医药零售企业打造了一个集医药商务推广、洽谈、贸易于一身的电子商贸平台。</p>
+            <p>通过在行业内多年的深耕细作、苦心经营，在全国领域打通医药大健康的上、中、下游产业链压缩中间环节，为中成药企业、中药饮片厂、中药制药设备、中药材种植基地、道地药材产区、中药保健品公司、中西成药、医疗器械、美妆个护、老年用品、生物医药孵化、医药投资商及经销商提供沟通、合作、发展、共赢的平台。</p>
+        </div>
     </div>
 </div>
+<div class="about-wrrap" id="memberTipsContent">
+        <div class="box">
+            <div class="title">会员服务</div>
+            <span class="close">×</span>
+            <div class="center">
+                <div>1、会员信息查询方法</div>
+                <p>进入会员中心后，在会员设置选项卡中的基本信息设置中查询</p>
+                <div>2、会员信息更正方法</div>
+                <p>进入会员中心后，在会员设置选项卡中的基本信息设置中在各条信息表单中更正</p>
+                
+                <div>3、会员信息删除方法</div>
+                <p>进入会员中心后，在会员设置选项卡中的基本信息设置中清空表单中的信息</p>
+                <div>4、会员账号注销方法</div>
+                <p>进入会员中心后，在会员设置选项卡中的账号安全设置中选择账号注销功能，注销直接自行操作即可</p>
+            </div>
+        </div>
+    </div>
+<script>
+    function show(){
+        // alert('22')
+        $('#about').show();
+    }
+    $('.close').click(function(){
+        $('#about').hide();
+        $('#memberTipsContent').hide();
+    })
+    $('.memberTips').click(function(){
+       
+        $('#memberTipsContent').show();
+    })
+   
+</script>

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>视频栏目</title>
 
-    <link rel="stylesheet" href="css/common.css"/>
-    <link rel="stylesheet" href="css/iconfont.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="shortcut icon" href="images/title_logo.png"/>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/iconfont.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="images/title_logo.png" />
     <script src="js/api.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
@@ -15,24 +16,25 @@
     <script src="js/jquery.roundabout.js"></script>
     <script src="js/videoIndex.js"></script>
     <script>
-//        window.onload=function(){
-//            $('#v_slider').roundabout({
-//                duration: 600, // 运动速度
-//                btnPrev: ".ban_l_btn", // 右按钮
-//                btnNext: ".ban_r_btn", // 左按钮
-//                autoplay: true,        // 自动播放
-//                autoplayDuration: 3000,// 自动播放的时间
-//                minOpacity: 0,         //最小的透明度
-//                maxOpacity: 1,         //最大的透明度
-//                reflect: true,         // 为true时是从左向右移动，为false从右向左移动
-//                startingChild: 3,      // 默认的显示第几张图片
-//                autoplayInitialDelay: 5000, // 从第几秒时，开始自动播放（默认毫秒）开始的第一次管用
-//                autoplayPauseOnHover: true, // 鼠标移入元素内是否自动播放，为true不播放，false还自动播放
-//                enableDrag: true       // 在移动端可以拖拽播放
-//            });
-//        }
+        //        window.onload=function(){
+        //            $('#v_slider').roundabout({
+        //                duration: 600, // 运动速度
+        //                btnPrev: ".ban_l_btn", // 右按钮
+        //                btnNext: ".ban_r_btn", // 左按钮
+        //                autoplay: true,        // 自动播放
+        //                autoplayDuration: 3000,// 自动播放的时间
+        //                minOpacity: 0,         //最小的透明度
+        //                maxOpacity: 1,         //最大的透明度
+        //                reflect: true,         // 为true时是从左向右移动，为false从右向左移动
+        //                startingChild: 3,      // 默认的显示第几张图片
+        //                autoplayInitialDelay: 5000, // 从第几秒时，开始自动播放（默认毫秒）开始的第一次管用
+        //                autoplayPauseOnHover: true, // 鼠标移入元素内是否自动播放，为true不播放，false还自动播放
+        //                enableDrag: true       // 在移动端可以拖拽播放
+        //            });
+        //        }
     </script>
 </head>
+
 <body>
     <!--头部内容-->
     <div class="son_header">
@@ -41,13 +43,18 @@
         <div class="son_top">
             <div class="w1200 margin_auto">
                 <div class="top_message  fl">
-                    <p >你好，欢迎来到当代医药市场网！ 咨询热线：010-59492286、010-59492296</p>
+                    <p>你好，欢迎来到当代医药市场网！ 咨询热线：010-59492286、010-59492296</p>
                 </div>
                 <div class="top_state fl">
-                    <span class="fl">ddyy123</span>
-                    <span  class="fl" id="close_login">退出</span>
+
+                    <span class="fl cursor">ddyy123</span>
+                    <span class="fl cursor" id="close_login">退出</span>
+                    <span class="fl cursor memberTips">会员服务</span>
+
                 </div>
                 <div id="login_register" class="login fl">
+                    <a href="javascript:;" class="memberTips">会员服务</a>
+                    &nbsp;
                     <a href="login.html" id="login">请登陆</a>
                     <a href="register.html" id="register">免费注册</a>
                 </div>
@@ -58,16 +65,16 @@
                                 <span class="ios">IOS</span><i class="iconfont icon-iconfontapple"></i>
                             </div>
                             <div class="dd4">
-                                <img src="images/iosrwm.png" alt=""/>
+                                <img src="images/iosrwm.png" alt="" />
                             </div>
-                            <div  class="below"></div>
+                            <div class="below"></div>
                         </li>
                         <li class="and">
                             <div class="dt4 dt">
                                 <span class="and">Android</span><i class="iconfont icon-20150720090316000"></i>
                             </div>
                             <!--<div class="dd4"></div>-->
-                            <div  class="below"></div>
+                            <div class="below"></div>
                         </li>
                         <li class="wachat">
                             <div class="dt1 dt">
@@ -76,25 +83,33 @@
                             <div class="dd1">
                                 <div style="width: 112px;height: 1px;background: #dedede;position: relative;"></div>
                                 <div class="weixin">
-                                    <img src="images/weixin.png" alt=""/>
+                                    <img src="images/weixin.png" alt="" />
                                 </div>
                                 <div class="x_text">
                                     <p>关注官方微信</p>
                                     <p class="p2">聚焦行业动态</p>
                                 </div>
                             </div>
-                            <div  class="below"></div>
+                            <div class="below"></div>
                         </li>
                         <li class="customer">
                             <div class="dt2 dt"><span>客户服务</span><i></i></div>
                             <div class="dd2">
-                                <a target="_blank" class="left_QQ" href="http://wpa.qq.com/msgrd?v=3&uin=3153671752&site=qq&menu=yes"><img src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
-                                <a target="_blank" class="left_QQ" href="http://wpa.qq.com/msgrd?v=3&uin=2928446968&site=qq&menu=yes"><img src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
-                                <a target="_blank" class="left_QQ" href="http://wpa.qq.com/msgrd?v=3&uin=3278342383&site=qq&menu=yes"><img src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
-                                <a target="_blank" class="left_QQ" href="http://wpa.qq.com/msgrd?v=3&uin=3153671752&site=qq&menu=yes"><img src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
+                                <a target="_blank" class="left_QQ"
+                                    href="http://wpa.qq.com/msgrd?v=3&uin=3153671752&site=qq&menu=yes"><img
+                                        src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
+                                <a target="_blank" class="left_QQ"
+                                    href="http://wpa.qq.com/msgrd?v=3&uin=2928446968&site=qq&menu=yes"><img
+                                        src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
+                                <a target="_blank" class="left_QQ"
+                                    href="http://wpa.qq.com/msgrd?v=3&uin=3278342383&site=qq&menu=yes"><img
+                                        src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
+                                <a target="_blank" class="left_QQ"
+                                    href="http://wpa.qq.com/msgrd?v=3&uin=3153671752&site=qq&menu=yes"><img
+                                        src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
 
                             </div>
-                            <div  class="below"></div>
+                            <div class="below"></div>
                         </li>
                     </ul>
                 </div>
@@ -121,10 +136,12 @@
         <!--logo及搜索-->
         <div class="son_top2">
             <div class="w1200 margin_auto">
-                <a href="index.html"><div class="logo fl"></div></a>
+                <a href="index.html">
+                    <div class="logo fl"></div>
+                </a>
                 <div class="channel_bg fl " id="video_bg"><a href="videoIndex.html">视频栏目</a></div>
                 <div class="search fr" style="display: none">
-                    <input type="text"  value="搜索视频" id="searchText" />
+                    <input type="text" value="搜索视频" id="searchText" />
                     <span class="go" id="searchGo"></span>
                 </div>
             </div>
@@ -135,14 +152,14 @@
         <div class="w1200 margin_auto">
             <!--旋转轮播-->
             <!--<div id="featured-area">-->
-                <!--<ul id="v_slider">-->
-                    <!--<li><img src="images/3Dimg.png"/></li>-->
-                    <!--<li><img src="images/3Dimg.png"/></li>-->
-                    <!--<li><img src="images/3Dimg.png"/></li>-->
-                    <!--<li><img src="images/3Dimg.png"/></li>-->
-                <!--</ul>-->
-                <!--<a href="javascript:void(0)" class="ban_l_btn"></a>-->
-                <!--<a href="javascript:void(0)" class="ban_r_btn"></a>-->
+            <!--<ul id="v_slider">-->
+            <!--<li><img src="images/3Dimg.png"/></li>-->
+            <!--<li><img src="images/3Dimg.png"/></li>-->
+            <!--<li><img src="images/3Dimg.png"/></li>-->
+            <!--<li><img src="images/3Dimg.png"/></li>-->
+            <!--</ul>-->
+            <!--<a href="javascript:void(0)" class="ban_l_btn"></a>-->
+            <!--<a href="javascript:void(0)" class="ban_r_btn"></a>-->
             <!--</div>-->
             <!--栏目列表-->
             <div id="classifyNav" style="display: none;">
@@ -187,7 +204,7 @@
                     <li>
                         <a href="#" class="dataBox">
                             <div class="dataImg">
-                                <img src="images/videoList.png" alt=""/>
+                                <img src="images/videoList.png" alt="" />
                                 <p class="dataInfo">我爱北京天那么</p>
                                 <div class="playIcon on">
                                     <div class="shade"></div>
@@ -210,16 +227,17 @@
     <div id="footer"></div>
 </body>
 <script>
-    $(function(){
+    $(function () {
         indexTop();
-        $(function(){
-            $('.dataImg').hover(function(){
-                $(this).find('.playIcon').css('display','block');
-            },function(){
-                $(this).find('.playIcon').css('display','none');
+        $(function () {
+            $('.dataImg').hover(function () {
+                $(this).find('.playIcon').css('display', 'block');
+            }, function () {
+                $(this).find('.playIcon').css('display', 'none');
             });
         })
         $('#footer').load('common/page_footer.html');
     })
 </script>
+
 </html>

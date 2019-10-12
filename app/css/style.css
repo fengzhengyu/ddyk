@@ -21,12 +21,12 @@
 #login_register {
     height: 30px;
     line-height: 30px;
-    margin-left: 200px;
+    margin-left: 150px;
 }
 
 #login_register #login {
     color: #ff500b;
-    margin-right: 10px;
+    margin-right: 7px;
 }
 
 #login_register #register {

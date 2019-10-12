@@ -43,9 +43,11 @@ $(function () {
         dataTotal = res.dataTotal,  //数据总数量
         dataList = $('.wares ul'), //详情数据融入
         txt = '',
+     
         totalNum = $('.page_tab .totals'),
         pageValue = $('#pageValue'), // 翻页页数值
         pageList = $('#page'), //翻页容器
+        pageJump = $('.jump'),
         pageGo = $('#pageGo'), //执行翻页按钮
         searchV = $('#searchText'), // 搜索值
         searchGo = $('#searchGo'); // 执行搜索按钮
@@ -83,7 +85,11 @@ $(function () {
         //分页搜索值
         pageValue.val(pageV);
     } else {
-        alert(res.info)
+        // alert(res.info)
+      
+        dataList.html('<div style="width: 100%;height: 400px;text-align: center;line-height: 400px;color: #000;font-size: 16px;">暂无数据</div>');
+        // pageList.hide();
+        // pageJump.hide();
     }
 //父类点击刷新数据
     var merchansKind = parentType.find('li');

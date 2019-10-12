@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="css/common.css"/>
-    <link rel="stylesheet" href="css/iconfont.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="shortcut icon" href="images/title_logo.png"/>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/iconfont.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="images/title_logo.png" />
     <script src="js/api.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
@@ -14,159 +15,179 @@
     <script src="js/informationDetails.js"></script>
 
 </head>
-<body>
-<!--头部内容-->
-<div class="son_header">
-    <!--顶部导航-->
-    <div class="son_top">
-        <div class="w1200 margin_auto">
-            <div class="top_message  fl">
-                <p >你好，欢迎来到当代医药市场网！ 咨询热线：010-59492286、010-59492296</p>
-            </div>
-            <div class="top_state fl">
-                <span class="fl">ddyy123</span>
-                <span  class="fl" id="close_login">退出</span>
-            </div>
-            <div id="login_register" class="login fl">
-                <a href="login.html" id="login">请登陆</a>
-                <a href="register.html" id="register">免费注册</a>
-            </div>
-            <div class="top_nav fr">
-                <ul>
-                    <li class="iphone">
-                        <div class="dt3 dt">
-                            <span class="ios">IOS</span><i class="iconfont icon-iconfontapple"></i>
-                        </div>
-                        <div class="dd4">
-                            <img src="images/iosrwm.png" alt=""/>
-                        </div>
-                        <div  class="below"></div>
-                    </li>
-                    <li class="and">
-                        <div class="dt4 dt">
-                            <span class="and">Android</span><i class="iconfont icon-20150720090316000"></i>
-                        </div>
-                        <!--<div class="dd4"></div>-->
-                        <div  class="below"></div>
-                    </li>
-                    <li class="wachat">
-                        <div class="dt1 dt">
-                            <span>官方微信</span><i></i>
-                        </div>
-                        <div class="dd1">
-                            <div style="width: 112px;height: 1px;background: #dedede;position: relative;"></div>
-                            <div class="weixin">
-                                <img src="images/weixin.png" alt=""/>
-                            </div>
-                            <div class="x_text">
-                                <p>关注官方微信</p>
-                                <p class="p2">聚焦行业动态</p>
-                            </div>
-                        </div>
-                        <div  class="below"></div>
-                    </li>
-                    <li class="customer">
-                        <div class="dt2 dt"><span>客户服务</span><i></i></div>
-                        <div class="dd2">
-                            <a target="_blank" class="left_QQ" href="http://wpa.qq.com/msgrd?v=3&uin=3153671752&site=qq&menu=yes"><img src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
-                            <a target="_blank" class="left_QQ" href="http://wpa.qq.com/msgrd?v=3&uin=2928446968&site=qq&menu=yes"><img src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
-                            <a target="_blank" class="left_QQ" href="http://wpa.qq.com/msgrd?v=3&uin=3278342383&site=qq&menu=yes"><img src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
-                            <a target="_blank" class="left_QQ" href="http://wpa.qq.com/msgrd?v=3&uin=3153671752&site=qq&menu=yes"><img src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
 
-                        </div>
-                        <div  class="below"></div>
-                    </li>
+<body>
+    <!--头部内容-->
+    <div class="son_header">
+        <!--顶部导航-->
+        <div class="son_top">
+            <div class="w1200 margin_auto">
+                <div class="top_message  fl">
+                    <p>你好，欢迎来到当代医药市场网！ 咨询热线：010-59492286、010-59492296</p>
+                </div>
+                <div class="top_state fl">
+
+                    <span class="fl cursor">ddyy123</span>
+                    <span class="fl cursor" id="close_login">退出</span>
+                    <span class="fl cursor memberTips">会员服务</span>
+
+                </div>
+                <div id="login_register" class="login fl">
+                    <a href="javascript:;" class="memberTips">会员服务</a>
+                    &nbsp;
+                    <a href="login.html" id="login">请登陆</a>
+                    <a href="register.html" id="register">免费注册</a>
+                </div>
+                <div class="top_nav fr">
+                    <ul>
+                        <li class="iphone">
+                            <div class="dt3 dt">
+                                <span class="ios">IOS</span><i class="iconfont icon-iconfontapple"></i>
+                            </div>
+                            <div class="dd4">
+                                <img src="images/iosrwm.png" alt="" />
+                            </div>
+                            <div class="below"></div>
+                        </li>
+                        <li class="and">
+                            <div class="dt4 dt">
+                                <span class="and">Android</span><i class="iconfont icon-20150720090316000"></i>
+                            </div>
+                            <!--<div class="dd4"></div>-->
+                            <div class="below"></div>
+                        </li>
+                        <li class="wachat">
+                            <div class="dt1 dt">
+                                <span>官方微信</span><i></i>
+                            </div>
+                            <div class="dd1">
+                                <div style="width: 112px;height: 1px;background: #dedede;position: relative;"></div>
+                                <div class="weixin">
+                                    <img src="images/weixin.png" alt="" />
+                                </div>
+                                <div class="x_text">
+                                    <p>关注官方微信</p>
+                                    <p class="p2">聚焦行业动态</p>
+                                </div>
+                            </div>
+                            <div class="below"></div>
+                        </li>
+                        <li class="customer">
+                            <div class="dt2 dt"><span>客户服务</span><i></i></div>
+                            <div class="dd2">
+                                <a target="_blank" class="left_QQ"
+                                    href="http://wpa.qq.com/msgrd?v=3&uin=3153671752&site=qq&menu=yes"><img
+                                        src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
+                                <a target="_blank" class="left_QQ"
+                                    href="http://wpa.qq.com/msgrd?v=3&uin=2928446968&site=qq&menu=yes"><img
+                                        src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
+                                <a target="_blank" class="left_QQ"
+                                    href="http://wpa.qq.com/msgrd?v=3&uin=3278342383&site=qq&menu=yes"><img
+                                        src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
+                                <a target="_blank" class="left_QQ"
+                                    href="http://wpa.qq.com/msgrd?v=3&uin=3153671752&site=qq&menu=yes"><img
+                                        src="images/qqtakl.png" alt="在线客服" title="在线客服" /></a>
+
+                            </div>
+                            <div class="below"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--二级菜单导航-->
+        <div class="son_nav">
+            <div class="w1200 margin_auto ovhidden">
+                <ul>
+                    <li><a href="/exhibition/" target="_blank" style="color:#fcff00;"><span>药博会</span></a></li>
+                    <li><a href="merchants.html"><span>招商</span></a></li>
+                    <li><a href="agentDataBase.html"><span>代理</span></a></li>
+                    <li><a href="marketing.html"><span>营销</span></a></li>
+                    <li><a href="purchase.html"><span>采购</span></a></li>
+                    <li><a href="information.html"><span>资讯</span></a></li>
+                    <!--<li><a href="javascript:;"><span>网刊</span></a></li>-->
+                    <li><a href="healthy.html"><span>健康</span></a></li>
+                    <li><a href="special.html"><span>专题</span></a></li>
+                    <li><a href="videoIndex.html"><span>视频</span></a></li>
                 </ul>
             </div>
         </div>
+        <!--logo及搜索-->
+        <div class="son_top2">
+            <div class="w1200 margin_auto">
+                <a href="index.html">
+                    <div class="logo fl"></div>
+                </a>
+                <div class="channel_bg fl " id="information_bg">
+                    <a href="information.html">资讯频道</a>
+                </div>
+                <div class="offspring fl">
+                    <p><a href="index.html">当代医药市场</a> &gt <a href="information.html">资讯</a> &gt <span
+                            id="parentName"></span> &gt <span id="sunName"></span></p>
+                </div>
+                <div class="search fr">
+                    <input type="text" value="搜索文章" id="searchText" />
+                    <span class="go" id="searchGo"></span>
+                </div>
+            </div>
+        </div>
     </div>
-    <!--二级菜单导航-->
-    <div class="son_nav">
+    <!--主体内容-->
+    <div class="market_main">
         <div class="w1200 margin_auto ovhidden">
-            <ul>
-                <li><a href="/exhibition/" target="_blank" style="color:#fcff00;"><span>药博会</span></a></li>
-                <li><a href="merchants.html"><span>招商</span></a></li>
-                <li><a href="agentDataBase.html"><span>代理</span></a></li>
-                <li><a href="marketing.html"><span>营销</span></a></li>
-                <li><a href="purchase.html"><span>采购</span></a></li>
-                <li><a href="information.html"><span>资讯</span></a></li>
-                <!--<li><a href="javascript:;"><span>网刊</span></a></li>-->
-                <li><a href="healthy.html"><span>健康</span></a></li>
-                <li><a href="special.html"><span>专题</span></a></li>
-                <li><a href="videoIndex.html"><span>视频</span></a></li>
-            </ul>
-        </div>
-    </div>
-    <!--logo及搜索-->
-    <div class="son_top2">
-        <div class="w1200 margin_auto">
-            <a href="index.html"><div class="logo fl"></div></a>
-            <div class="channel_bg fl " id="information_bg">
-                <a href="information.html">资讯频道</a>
-            </div>
-            <div class="offspring fl">
-                <p><a href="index.html">当代医药市场</a>  &gt  <a href="information.html">资讯</a>  &gt  <span id="parentName"></span> &gt  <span id="sunName"></span></p>
-            </div>
-            <div class="search fr">
-                <input type="text"  value="搜索文章" id="searchText" />
-                <span class="go" id="searchGo"></span>
-            </div>
-        </div>
-    </div>
-</div>
-<!--主体内容-->
-<div class="market_main">
-    <div class="w1200 margin_auto ovhidden">
-        <div style="padding-top: 20px;"></div>
-        <!--左侧信息详情内容-->
-        <div class="market_left fl  ovhidden">
-            <!--分享列表-->
-            <div class="market_left_list fl" id="shareList">
+            <div style="padding-top: 20px;"></div>
+            <!--左侧信息详情内容-->
+            <div class="market_left fl  ovhidden">
+                <!--分享列表-->
+                <div class="market_left_list fl" id="shareList">
 
-                <a title="分享到QQ好友"  onclick="javascript:bShare.share(event,'qqim',0);return false;"  class="market_left_list_c">
-                    <span class="icon1"></span>QQ好友
-                </a>
-                <a onclick="javascript:bShare.share(event,'qzone',0);return false;"  class="market_left_list_c">
-                    <span class="icon2"></span>QQ空间
-                </a>
-                <a onclick="javascript:bShare.share(event,'weixin',0);return false;" class="market_left_list_c">
-                    <span class="icon3"></span>微信好友
-                </a>
-                <a onclick="javascript:bShare.share(event,'sinaminiblog',0);return false;" class="market_left_list_c">
-                    <span class="icon5"></span>新浪微博
-                </a>
-            </div>
-            <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=&style=-1"></script>
-            <!--信息详情内容-->
-            <div class="market_left_text fr" id="details">
-
-            </div>
-        </div>
-        <!--右侧推荐列表-->
-        <div class="market_right fl">
-            <div class="market_right_container1">
-                <h2 class="market_r_c1_title">
-                    精彩推荐
-                </h2>
-                <div class="market_r_c1_content" id="splendid">
+                    <a title="分享到QQ好友" onclick="javascript:bShare.share(event,'qqim',0);return false;"
+                        class="market_left_list_c">
+                        <span class="icon1"></span>QQ好友
+                    </a>
+                    <a onclick="javascript:bShare.share(event,'qzone',0);return false;" class="market_left_list_c">
+                        <span class="icon2"></span>QQ空间
+                    </a>
+                    <a onclick="javascript:bShare.share(event,'weixin',0);return false;" class="market_left_list_c">
+                        <span class="icon3"></span>微信好友
+                    </a>
+                    <a onclick="javascript:bShare.share(event,'sinaminiblog',0);return false;"
+                        class="market_left_list_c">
+                        <span class="icon5"></span>新浪微博
+                    </a>
                 </div>
-            </div>
-            <div class="market_right_container2">
-                <h2 class="market_r_c2_title">热门推荐</h2>
-                <div class="market_r_c2_content" id="hot">
+                <script type="text/javascript" charset="utf-8"
+                    src="http://static.bshare.cn/b/buttonLite.js#uuid=&style=-1"></script>
+                <!--信息详情内容-->
+                <div class="market_left_text fr" id="details">
 
                 </div>
             </div>
+            <!--右侧推荐列表-->
+            <div class="market_right fl">
+                <div class="market_right_container1">
+                    <h2 class="market_r_c1_title">
+                        精彩推荐
+                    </h2>
+                    <div class="market_r_c1_content" id="splendid">
+                    </div>
+                </div>
+                <div class="market_right_container2">
+                    <h2 class="market_r_c2_title">热门推荐</h2>
+                    <div class="market_r_c2_content" id="hot">
+
+                    </div>
+                </div>
+            </div>
+            <!--返回顶部-->
+            <div class="goBack"></div>
         </div>
-        <!--返回顶部-->
-        <div class="goBack"></div>
     </div>
-</div>
-<!--底部部分-->
-<div id="footer"></div>
+    <!--底部部分-->
+    <div id="footer"></div>
 </body>
 <script>
-    $(function(){
+    $(function () {
         indexTop();
         //固定侧边栏
         shareOffset($('#shareList'));
@@ -174,4 +195,5 @@
         $('#footer').load('common/page_footer.html');
     })
 </script>
+
 </html>
